@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="lib" path="lib/base/video/gstreamer-java.jar" sourcepath="/Applications/Processing.app/Contents/Java/modes/java/libraries/video/src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/base/video"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/base/video/jna.jar" sourcepath="/Applications/Processing.app/Contents/Java/modes/java/libraries/video/src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/base/video"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/base/video/video.jar" sourcepath="/Applications/Processing.app/Contents/Java/modes/java/libraries/video/src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/base/video"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/base/core/core.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/base/core"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/base/core/gluegen-rt-natives-linux-amd64.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/base/core"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/base/core/gluegen-rt-natives-linux-armv6hf.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/base/core"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/base/core/gluegen-rt-natives-linux-i586.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/base/core"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/base/core/gluegen-rt-natives-macosx-universal.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/base/core"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/base/core/gluegen-rt-natives-windows-amd64.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/base/core"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/base/core/gluegen-rt-natives-windows-i586.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/base/core"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/base/core/gluegen-rt.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/base/core"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/base/core/jogl-all-natives-linux-amd64.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/base/core"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/base/core/jogl-all-natives-linux-armv6hf.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/base/core"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/base/core/jogl-all-natives-linux-i586.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/base/core"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/base/core/jogl-all-natives-macosx-universal.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/base/core"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/base/core/jogl-all-natives-windows-amd64.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/base/core"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/base/core/jogl-all-natives-windows-i586.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/base/core"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/base/core/jogl-all.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/base/core"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/user/beads/beads.jar" sourcepath="/Users/chro/Documents/Processing/libraries/beads/src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/user/beads"/>
+			<attribute name="javadoc_location" value="file:/Users/chro/Documents/Processing/libraries/beads/reference/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/user/beads/jarjar-1.0.jar" sourcepath="/Users/chro/Documents/Processing/libraries/beads/src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/user/beads"/>
+			<attribute name="javadoc_location" value="file:/Users/chro/Documents/Processing/libraries/beads/reference/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/user/beads/jl1.0.1.jar" sourcepath="/Users/chro/Documents/Processing/libraries/beads/src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/user/beads"/>
+			<attribute name="javadoc_location" value="file:/Users/chro/Documents/Processing/libraries/beads/reference/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/user/beads/jna.jar" sourcepath="/Users/chro/Documents/Processing/libraries/beads/src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/user/beads"/>
+			<attribute name="javadoc_location" value="file:/Users/chro/Documents/Processing/libraries/beads/reference/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/user/beads/mp3spi1.9.4.jar" sourcepath="/Users/chro/Documents/Processing/libraries/beads/src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/user/beads"/>
+			<attribute name="javadoc_location" value="file:/Users/chro/Documents/Processing/libraries/beads/reference/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/user/beads/org-jaudiolibs-audioservers-jack.jar" sourcepath="/Users/chro/Documents/Processing/libraries/beads/src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/user/beads"/>
+			<attribute name="javadoc_location" value="file:/Users/chro/Documents/Processing/libraries/beads/reference/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/user/beads/org-jaudiolibs-audioservers-javasound.jar" sourcepath="/Users/chro/Documents/Processing/libraries/beads/src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/user/beads"/>
+			<attribute name="javadoc_location" value="file:/Users/chro/Documents/Processing/libraries/beads/reference/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/user/beads/org-jaudiolibs-audioservers.jar" sourcepath="/Users/chro/Documents/Processing/libraries/beads/src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/user/beads"/>
+			<attribute name="javadoc_location" value="file:/Users/chro/Documents/Processing/libraries/beads/reference/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/user/beads/org-jaudiolibs-jnajack.jar" sourcepath="/Users/chro/Documents/Processing/libraries/beads/src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/user/beads"/>
+			<attribute name="javadoc_location" value="file:/Users/chro/Documents/Processing/libraries/beads/reference/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/user/beads/tools.jar" sourcepath="/Users/chro/Documents/Processing/libraries/beads/src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/user/beads"/>
+			<attribute name="javadoc_location" value="file:/Users/chro/Documents/Processing/libraries/beads/reference/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/user/beads/tritonus_aos-0.3.6.jar" sourcepath="/Users/chro/Documents/Processing/libraries/beads/src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/user/beads"/>
+			<attribute name="javadoc_location" value="file:/Users/chro/Documents/Processing/libraries/beads/reference/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/user/beads/tritonus_share.jar" sourcepath="/Users/chro/Documents/Processing/libraries/beads/src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/user/beads"/>
+			<attribute name="javadoc_location" value="file:/Users/chro/Documents/Processing/libraries/beads/reference/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/user/boofcv_processing/boofcv_dependencies.jar" sourcepath="/Users/chro/Documents/Processing/libraries/boofcv_processing/src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/user/boofcv_processing"/>
+			<attribute name="javadoc_location" value="file:/Users/chro/Documents/Processing/libraries/boofcv_processing/reference/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/user/boofcv_processing/boofcv_processing.jar" sourcepath="/Users/chro/Documents/Processing/libraries/boofcv_processing/src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/user/boofcv_processing"/>
+			<attribute name="javadoc_location" value="file:/Users/chro/Documents/Processing/libraries/boofcv_processing/reference/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/user/opencv_processing/opencv-245.jar" sourcepath="/Users/chro/Documents/Processing/libraries/opencv_processing/src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/user/opencv_processing"/>
+			<attribute name="javadoc_location" value="file:/Users/chro/Documents/Processing/libraries/opencv_processing/reference/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/user/opencv_processing/opencv_processing.jar" sourcepath="/Users/chro/Documents/Processing/libraries/opencv_processing/src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/user/opencv_processing"/>
+			<attribute name="javadoc_location" value="file:/Users/chro/Documents/Processing/libraries/opencv_processing/reference/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/user/tactu5/tactu5.jar" sourcepath="/Users/chro/Documents/Processing/libraries/tactu5/src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/user/tactu5"/>
+			<attribute name="javadoc_location" value="file:/Users/chro/Documents/Processing/libraries/tactu5/reference/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/user/themidibus/themidibus.jar" sourcepath="/Users/chro/Documents/Processing/libraries/themidibus/src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/user/themidibus"/>
+			<attribute name="javadoc_location" value="file:/Users/chro/Documents/Processing/libraries/themidibus/reference/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
