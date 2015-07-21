@@ -22,10 +22,16 @@ import processing.video.Capture;
 public class DetectImage extends PApplet {
 	Capture cam;
 	OpenCV opencv;
-	PImage src;
+	int b=0;
+	
+	PImage  src, dst, markerImg;
 	ArrayList<MatOfPoint> contours;
 	ArrayList<MatOfPoint2f> approximations;
 	ArrayList<MatOfPoint2f> markers;
+	
+
+	int camera_width =Integer.valueOf(Props.getValue("camera_width"));
+	int camera_height =Integer.valueOf(Props.getValue("camera_height"));
 	int threshold_block =Integer.valueOf(Props.getValue("threshold_block"));
 	int threshold_substract =Integer.valueOf(Props.getValue("threshold_substract"));
 	ArrayList<Line> lines;
@@ -34,9 +40,9 @@ public class DetectImage extends PApplet {
 	boolean[][] markerCells;
 
 	public	void setup() {
-		size(640, 480);
+		size(camera_width, camera_height);
 
-		    cam = new Capture(this, 640, 480, Props.getValue("camera.Name"), 30);
+		    cam = new Capture(this, camera_width, camera_height, Props.getValue("camera_name"), 30);
 		    
 		    // Start capturing the images from the camera
 		    cam.start();
@@ -58,36 +64,16 @@ public class DetectImage extends PApplet {
 		
 		    opencv = new OpenCV(this, cam);
 		    
-		    opencv.adaptiveThreshold(threshold_block, threshold_substract);
-		
+	//	    opencv.adaptiveThreshold(threshold_block, threshold_substract);
+		 
+			    opencv.threshold(b);
+System.out.println(b++);
+if(b==255) b=0;
 		    
-		    
-		    
-		    
-		    opencv.findCannyEdges(20, 75);
-
-		    // Find lines with Hough line detection
-		    // Arguments are: threshold, minLengthLength, maxLineGap
-		    lines = opencv.findLines(100, 30, 20);
-
 		    
 			image(opencv.getSnapshot(), 0, 0);
 	  //  strokeWeight(3);
-	    
-	    for (Line line : lines) {
-	      // lines include angle in radians, measured in double precision
-	      // so we can select out vertical and horizontal lines
-	      // They also include "start" and "end" PVectors with the position
-	      if (line.angle >= radians(0) && line.angle < radians(1)) {
-	        stroke(0, 255, 0);
-	        line(line.start.x, line.start.y, line.end.x, line.end.y);
-	      }
-
-	      if (line.angle > radians(89) && line.angle < radians(91)) {
-	        stroke(255, 0, 0);
-	        line(line.start.x, line.start.y, line.end.x, line.end.y);
-	      }
-	    }
+	   
 		    
 		    
 		    
