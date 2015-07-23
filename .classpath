@@ -162,6 +162,12 @@
 			<attribute name="javadoc_location" value="file:/Users/chro/Documents/Processing/libraries/beads/reference/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/user/blobscanner/blobscanner.jar" sourcepath="/Users/chro/Documents/Processing/libraries/blobscanner/src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/user/blobscanner"/>
+			<attribute name="javadoc_location" value="file:/Users/chro/Documents/Processing/libraries/blobscanner/reference/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="lib/user/boofcv_processing/boofcv_dependencies.jar" sourcepath="/Users/chro/Documents/Processing/libraries/boofcv_processing/src">
 		<attributes>
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="glassbead/lib/user/boofcv_processing"/>
