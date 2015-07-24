@@ -24,4 +24,16 @@ public class GoMoku extends BaseApplet {
 		
 	}
 
+	@Override
+	public void playRow(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void playColumn(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

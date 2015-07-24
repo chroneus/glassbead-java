@@ -22,20 +22,22 @@ public abstract class BaseApplet extends PApplet {
 	public  MidiBus resultBus = new MidiBus(this,3,4);
 	
 
-	 Queue<Integer> lines_played = new LinkedList<Integer>();  
 	
 
+   public abstract void playRow(int i); 
+   public abstract void playColumn(int i); 
 
    public abstract void stopAll();
    public abstract void startAll();
    public abstract void muteRow(int i);
 	public  void sendMidiMessage(MidiBus myBus,int channel,int number,int value){
 		myBus.sendControllerChange(new ControlChange(channel, number, value));
+		
 	}
 	
 	public  void sendMidiMessage(MidiBus myBus,int channel,int number,int value,int delay){
 		
-		myBus.sendControllerChange(new ControlChange(channel, number, value));
+		sendMidiMessage( myBus, channel, number, value);
 		delay(delay);
 	
 	}
@@ -60,5 +62,6 @@ public void destroy() {
 	
 	
 }
+
 
 }
