@@ -1,11 +1,11 @@
-package io.alatalab.glassbead.state;
+package com.chroneus.atarigo;
 
 import java.util.*;
 import java.util.concurrent.*;
 
 
 public class Engine {
-	ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+	//ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 	Random random = new Random();
 	int depth_minimax_ply = 4;
 	int move_to_consider_after_random = 20;
@@ -153,7 +153,7 @@ public class Engine {
 	 * subset of @param possible_moves on @param board which contains several
 	 * (move_to_consider_after_random)best moves from a point of series of
 	 * random game
-	 */
+	 
 	BitBoard filterBoardWithRandom(Board board, BitBoard possible_moves, int moves_to_consider) {
 		try {
 			List<Callable<Integer[]>> tasks = new ArrayList<Callable<Integer[]>>();

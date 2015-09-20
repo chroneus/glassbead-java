@@ -1,4 +1,4 @@
-package io.alatalab.glassbead.state;
+package com.chroneus.atarigo;
 
 import java.io.*;
 import java.util.*;

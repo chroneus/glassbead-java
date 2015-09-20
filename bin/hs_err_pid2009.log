@@ -1,0 +1,821 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x0000000133c46485, pid=2009, tid=56851
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_25-b17) (build 1.8.0_25-b17)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.25-b02 mixed mode bsd-amd64 compressed oops)
+# Problematic frame:
+# C  [libopencv_core.2.4.dylib+0x115485]  cv::_OutputArray::create(int, int const*, int, int, bool, int) const+0x423
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fcb23a29000):  JavaThread "Animation Thread" [_thread_in_native, id=56851, stack(0x000000012b676000,0x000000012b776000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x000001bf000001fb
+
+Registers:
+RAX=0x000001bf000001fb, RBX=0x00000000ffffffff, RCX=0x000000000000001c, RDX=0x000000012b774f28
+RSP=0x000000012b773f60, RBP=0x000000012b775500, RSI=0x0000000000000002, RDI=0x000000012b775500
+R8 =0x00000000ffffffff, R9 =0x0000000000000001, R10=0x00000000009fba3a, R11=0x0000000001072250
+R12=0x0000000000010000, R13=0x0000000000000001, R14=0x000000000000001c, R15=0x000000012b775500
+RIP=0x0000000133c46485, EFLAGS=0x0000000000010202, ERR=0x0000000000000006
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x000000012b773f60)
+0x000000012b773f60:   0101010101010101 0101010101010101
+0x000000012b773f70:   0101010101010101 0000001c00000001
+0x000000012b773f80:   00007fcb2982ee50 000000020000000a
+0x000000012b773f90:   000000012b774f28 000000012b7740c8
+0x000000012b773fa0:   0000000142e5be40 0000000133c87e60
+0x000000012b773fb0:   000000012b773fe0 0000000133c87ed4
+0x000000012b773fc0:   000003cc00000399 00007fff8eb1e8d9
+0x000000012b773fd0:   000000012b773cb0 00007fff915af439
+0x000000012b773fe0:   000000012b774020 00007fff8eb1e863
+0x000000012b773ff0:   0000000000000000 0000000142e5c280
+0x000000012b774000:   0000000000000000 00007fff915af451
+0x000000012b774010:   0000000000000001 0000000142e5c280
+0x000000012b774020:   000000012b7740b0 00007fff8eb1e763
+0x000000012b774030:   000000022b774060 0000000000000000
+0x000000012b774040:   0000000300000001 0000000142e5be40
+0x000000012b774050:   0000000000000000 0000000000000000
+0x000000012b774060:   0000000000000000 0000000133c87e60
+0x000000012b774070:   000000012b7740c8 0000000000000000
+0x000000012b774080:   0000000000000000 0000000000000013
+0x000000012b774090:   0000000000000500 0000000000000001
+0x000000012b7740a0:   000000012b7744d0 0000000000000000
+0x000000012b7740b0:   0000000000000510 0000000133c88068
+0x000000012b7740c0:   0000000000000500 000000012b774338
+0x000000012b7740d0:   000003cc00000000 000000012b774470
+0x000000012b7740e0:   000000012b7744d0 0000000133f38d65
+0x000000012b7740f0:   403338c000000000 000000012b7741b0
+0x000000012b774100:   3ff0000000000000 0000000000000000
+0x000000012b774110:   0000000242ff4000 0000051000000000
+0x000000012b774120:   0000000000000000 0000000000000000
+0x000000012b774130:   0000000000000000 0000000000000000
+0x000000012b774140:   0000000000000000 0000000000000000
+0x000000012b774150:   000000012b774118 000000012b774160 
+
+Instructions: (pc=0x0000000133c46485)
+0x0000000133c46465:   00 48 89 c7 e8 54 6e 08 00 48 8b 44 24 20 48 8b
+0x0000000133c46475:   40 18 48 85 c0 0f 84 eb 06 00 00 bb ff ff ff ff
+0x0000000133c46485:   f0 0f c1 18 83 fb 01 0f 85 d9 06 00 00 48 8b 44
+0x0000000133c46495:   24 20 48 8b 40 38 48 85 c0 0f 84 b6 06 00 00 48 
+
+Register to memory mapping:
+
+RAX=0x000001bf000001fb is an unknown value
+RBX=0x00000000ffffffff is an unknown value
+RCX=0x000000000000001c is an unknown value
+RDX=0x000000012b774f28 is pointing into the stack for thread: 0x00007fcb23a29000
+RSP=0x000000012b773f60 is pointing into the stack for thread: 0x00007fcb23a29000
+RBP=0x000000012b775500 is pointing into the stack for thread: 0x00007fcb23a29000
+RSI=0x0000000000000002 is an unknown value
+RDI=0x000000012b775500 is pointing into the stack for thread: 0x00007fcb23a29000
+R8 =0x00000000ffffffff is an unknown value
+R9 =0x0000000000000001 is an unknown value
+R10=0x00000000009fba3a is an unknown value
+R11=0x0000000001072250 is an unknown value
+R12=0x0000000000010000 is an unknown value
+R13=0x0000000000000001 is an unknown value
+R14=0x000000000000001c is an unknown value
+R15=0x000000012b775500 is pointing into the stack for thread: 0x00007fcb23a29000
+
+
+Stack: [0x000000012b676000,0x000000012b776000],  sp=0x000000012b773f60,  free space=1015k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libopencv_core.2.4.dylib+0x115485]  cv::_OutputArray::create(int, int const*, int, int, bool, int) const+0x423
+C  0x0000000100010000
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J 2333  org.opencv.imgproc.Imgproc.findContours_1(JJJII)V (0 bytes) @ 0x000000010df5a8ce [0x000000010df5a880+0x4e]
+J 2375 C2 gab.opencv.OpenCV.findContours(ZZ)Ljava/util/ArrayList; (124 bytes) @ 0x000000010dc1525c [0x000000010dc15040+0x21c]
+J 2372 C2 io.alatalab.glassbead.AtariGo.draw()V (543 bytes) @ 0x000000010e2ba9ac [0x000000010e2b9480+0x152c]
+J 2639 C2 processing.core.PApplet.handleDraw()V (382 bytes) @ 0x000000010e147b2c [0x000000010e146e40+0xcec]
+J 2637 C2 processing.core.PGraphicsJava2D.requestDraw()V (8 bytes) @ 0x000000010de8d5e4 [0x000000010de8d5a0+0x44]
+j  processing.core.PApplet.run()V+156
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007fcb24d03800 JavaThread "gstreamer service thread 1" daemon [_thread_blocked, id=122199, stack(0x0000000135625000,0x0000000135725000)]
+=>0x00007fcb23a29000 JavaThread "Animation Thread" [_thread_in_native, id=56851, stack(0x000000012b676000,0x000000012b776000)]
+  0x00007fcb239ed000 JavaThread "AWT-EventQueue-1" [_thread_blocked, id=118019, stack(0x000000012c93d000,0x000000012ca3d000)]
+  0x00007fcb241c8000 JavaThread "Java Sound MidiInDevice Thread" [_thread_in_native, id=117507, stack(0x000000012c776000,0x000000012c876000)]
+  0x00007fcb241f2000 JavaThread "Java Sound MidiInDevice Thread" [_thread_in_native, id=116995, stack(0x000000012c58c000,0x000000012c68c000)]
+  0x00007fcb25227800 JavaThread "Java Sound MidiInDevice Thread" [_thread_in_native, id=116483, stack(0x000000012c489000,0x000000012c589000)]
+  0x00007fcb251f9800 JavaThread "Java Sound MidiInDevice Thread" [_thread_in_native, id=115995, stack(0x000000012c386000,0x000000012c486000)]
+  0x00007fcb241a7000 JavaThread "DestroyJavaVM" [_thread_blocked, id=6403, stack(0x000000010d91d000,0x000000010da1d000)]
+  0x00007fcb24179000 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=54043, stack(0x000000012a0b7000,0x000000012a1b7000)]
+  0x00007fcb249a4000 JavaThread "thread applet-io.alatalab.glassbead.AtariGo.class" [_thread_blocked, id=50439, stack(0x00000001295db000,0x00000001296db000)]
+  0x00007fcb2499d000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=49923, stack(0x0000000129471000,0x0000000129571000)]
+  0x00007fcb2510b000 JavaThread "Java2D Queue Flusher" daemon [_thread_blocked, id=47623, stack(0x00000001285e7000,0x00000001286e7000)]
+  0x00007fcb23897000 JavaThread "AWT-Shutdown" [_thread_blocked, id=26895, stack(0x0000000125b43000,0x0000000125c43000)]
+  0x00007fcb2486a800 JavaThread "AppKit Thread" daemon [_thread_in_native, id=3335, stack(0x00007fff5334d000,0x00007fff53b4d000)]
+  0x00007fcb24000000 JavaThread "Service Thread" daemon [_thread_blocked, id=19971, stack(0x000000012408e000,0x000000012418e000)]
+  0x00007fcb23872800 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=19459, stack(0x0000000123f8b000,0x000000012408b000)]
+  0x00007fcb25027800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=18947, stack(0x0000000123e88000,0x0000000123f88000)]
+  0x00007fcb2382c800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=18435, stack(0x0000000123d85000,0x0000000123e85000)]
+  0x00007fcb2381f800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=17923, stack(0x0000000123c82000,0x0000000123d82000)]
+  0x00007fcb24002800 JavaThread "Finalizer" daemon [_thread_in_native, id=12547, stack(0x00000001239c5000,0x0000000123ac5000)]
+  0x00007fcb2381e800 JavaThread "Reference Handler" daemon [_thread_blocked, id=12035, stack(0x00000001238c2000,0x00000001239c2000)]
+
+Other Threads:
+  0x00007fcb25032800 VMThread [stack: 0x00000001237bf000,0x00000001238bf000] [id=11523]
+  0x00007fcb2400a000 WatcherThread [stack: 0x0000000124191000,0x0000000124291000] [id=20483]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 47104K, used 803K [0x0000000795580000, 0x00000007b2680000, 0x00000007c0000000)
+  eden space 46592K, 1% used [0x0000000795580000,0x00000007955f8e20,0x0000000798300000)
+  from space 512K, 62% used [0x00000007b2500000,0x00000007b2550000,0x00000007b2580000)
+  to   space 1024K, 0% used [0x00000007b2580000,0x00000007b2580000,0x00000007b2680000)
+ ParOldGen       total 123904K, used 53313K [0x0000000740000000, 0x0000000747900000, 0x0000000795580000)
+  object space 123904K, 43% used [0x0000000740000000,0x00000007434107a8,0x0000000747900000)
+ Metaspace       used 15820K, capacity 15974K, committed 16256K, reserved 1062912K
+  class space    used 1773K, capacity 1835K, committed 1920K, reserved 1048576K
+
+Card table byte_map: [0x000000011ce13000,0x000000011d214000] byte_map_base: 0x0000000119413000
+
+Marking Bits: (ParMarkBitMap*) 0x000000010d29d390
+ Begin Bits: [0x000000011d8cb000, 0x000000011f8cb000)
+ End Bits:   [0x000000011f8cb000, 0x00000001218cb000)
+
+Polling page: 0x000000010c1d5000
+
+CodeCache: size=245760Kb used=7916Kb max_used=8613Kb free=237843Kb
+ bounds [0x000000010da53000, 0x000000010e2e3000, 0x000000011ca53000]
+ total_blobs=2945 nmethods=2216 adapters=644
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 1877.814 Thread 0x00007fcb23872800 2647       1       com.sun.media.sound.FastShortMessage::getStatus (9 bytes)
+Event: 1877.814 Thread 0x00007fcb23872800 nmethod 2647 0x000000010df84a50 code [0x000000010df84ba0, 0x000000010df84cb0]
+Event: 2040.002 Thread 0x00007fcb23872800 2648       3       java.util.LinkedList::unlinkFirst (64 bytes)
+Event: 2040.003 Thread 0x00007fcb23872800 nmethod 2648 0x000000010e11ca50 code [0x000000010e11cbc0, 0x000000010e11ce10]
+Event: 2116.962 Thread 0x00007fcb23872800 2649       3       processing.video.Capture::get (18 bytes)
+Event: 2116.963 Thread 0x00007fcb23872800 nmethod 2649 0x000000010e043d90 code [0x000000010e043f00, 0x000000010e044118]
+Event: 2116.963 Thread 0x00007fcb23872800 2650       3       processing.core.PImage::get (114 bytes)
+Event: 2116.964 Thread 0x00007fcb23872800 nmethod 2650 0x000000010e0f2590 code [0x000000010e0f2720, 0x000000010e0f2a50]
+Event: 2116.966 Thread 0x00007fcb23872800 2651       3       java.awt.Color::getBlue (11 bytes)
+Event: 2116.966 Thread 0x00007fcb23872800 nmethod 2651 0x000000010e2671d0 code [0x000000010e267340, 0x000000010e267568]
+
+GC Heap History (10 events):
+Event: 2156.607 GC heap before
+{Heap before GC invocations=2089 (full 68):
+ PSYoungGen      total 49664K, used 49664K [0x0000000795580000, 0x00000007b2780000, 0x00000007c0000000)
+  eden space 49152K, 100% used [0x0000000795580000,0x0000000798580000,0x0000000798580000)
+  from space 512K, 100% used [0x00000007b2700000,0x00000007b2780000,0x00000007b2780000)
+  to   space 1024K, 0% used [0x00000007b2580000,0x00000007b2580000,0x00000007b2680000)
+ ParOldGen       total 123904K, used 53195K [0x0000000740000000, 0x0000000747900000, 0x0000000795580000)
+  object space 123904K, 42% used [0x0000000740000000,0x00000007433f2ec8,0x0000000747900000)
+ Metaspace       used 15820K, capacity 15974K, committed 16256K, reserved 1062912K
+  class space    used 1773K, capacity 1835K, committed 1920K, reserved 1048576K
+Event: 2156.611 GC heap after
+Heap after GC invocations=2089 (full 68):
+ PSYoungGen      total 49664K, used 448K [0x0000000795580000, 0x00000007b2780000, 0x00000007c0000000)
+  eden space 48640K, 0% used [0x0000000795580000,0x0000000795580000,0x0000000798500000)
+  from space 1024K, 43% used [0x00000007b2580000,0x00000007b25f0000,0x00000007b2680000)
+  to   space 1024K, 0% used [0x00000007b2680000,0x00000007b2680000,0x00000007b2780000)
+ ParOldGen       total 123904K, used 53211K [0x0000000740000000, 0x0000000747900000, 0x0000000795580000)
+  object space 123904K, 42% used [0x0000000740000000,0x00000007433f6ec8,0x0000000747900000)
+ Metaspace       used 15820K, capacity 15974K, committed 16256K, reserved 1062912K
+  class space    used 1773K, capacity 1835K, committed 1920K, reserved 1048576K
+}
+Event: 2157.321 GC heap before
+{Heap before GC invocations=2090 (full 68):
+ PSYoungGen      total 49664K, used 49088K [0x0000000795580000, 0x00000007b2780000, 0x00000007c0000000)
+  eden space 48640K, 100% used [0x0000000795580000,0x0000000798500000,0x0000000798500000)
+  from space 1024K, 43% used [0x00000007b2580000,0x00000007b25f0000,0x00000007b2680000)
+  to   space 1024K, 0% used [0x00000007b2680000,0x00000007b2680000,0x00000007b2780000)
+ ParOldGen       total 123904K, used 53211K [0x0000000740000000, 0x0000000747900000, 0x0000000795580000)
+  object space 123904K, 42% used [0x0000000740000000,0x00000007433f6ec8,0x0000000747900000)
+ Metaspace       used 15820K, capacity 15974K, committed 16256K, reserved 1062912K
+  class space    used 1773K, capacity 1835K, committed 1920K, reserved 1048576K
+Event: 2157.324 GC heap after
+Heap after GC invocations=2090 (full 68):
+ PSYoungGen      total 49152K, used 832K [0x0000000795580000, 0x00000007b2780000, 0x00000007c0000000)
+  eden space 48128K, 0% used [0x0000000795580000,0x0000000795580000,0x0000000798480000)
+  from space 1024K, 81% used [0x00000007b2680000,0x00000007b2750000,0x00000007b2780000)
+  to   space 1024K, 0% used [0x00000007b2580000,0x00000007b2580000,0x00000007b2680000)
+ ParOldGen       total 123904K, used 53219K [0x0000000740000000, 0x0000000747900000, 0x0000000795580000)
+  object space 123904K, 42% used [0x0000000740000000,0x00000007433f8ec8,0x0000000747900000)
+ Metaspace       used 15820K, capacity 15974K, committed 16256K, reserved 1062912K
+  class space    used 1773K, capacity 1835K, committed 1920K, reserved 1048576K
+}
+Event: 2158.064 GC heap before
+{Heap before GC invocations=2091 (full 68):
+ PSYoungGen      total 49152K, used 48960K [0x0000000795580000, 0x00000007b2780000, 0x00000007c0000000)
+  eden space 48128K, 100% used [0x0000000795580000,0x0000000798480000,0x0000000798480000)
+  from space 1024K, 81% used [0x00000007b2680000,0x00000007b2750000,0x00000007b2780000)
+  to   space 1024K, 0% used [0x00000007b2580000,0x00000007b2580000,0x00000007b2680000)
+ ParOldGen       total 123904K, used 53239K [0x0000000740000000, 0x0000000747900000, 0x0000000795580000)
+  object space 123904K, 42% used [0x0000000740000000,0x00000007433fdea0,0x0000000747900000)
+ Metaspace       used 15820K, capacity 15974K, committed 16256K, reserved 1062912K
+  class space    used 1773K, capacity 1835K, committed 1920K, reserved 1048576K
+Event: 2158.068 GC heap after
+Heap after GC invocations=2091 (full 68):
+ PSYoungGen      total 48128K, used 480K [0x0000000795580000, 0x00000007b2700000, 0x00000007c0000000)
+  eden space 47616K, 0% used [0x0000000795580000,0x0000000795580000,0x0000000798400000)
+  from space 512K, 93% used [0x00000007b2580000,0x00000007b25f8000,0x00000007b2600000)
+  to   space 1024K, 0% used [0x00000007b2600000,0x00000007b2600000,0x00000007b2700000)
+ ParOldGen       total 123904K, used 53271K [0x0000000740000000, 0x0000000747900000, 0x0000000795580000)
+  object space 123904K, 42% used [0x0000000740000000,0x0000000743405ea0,0x0000000747900000)
+ Metaspace       used 15820K, capacity 15974K, committed 16256K, reserved 1062912K
+  class space    used 1773K, capacity 1835K, committed 1920K, reserved 1048576K
+}
+Event: 2158.741 GC heap before
+{Heap before GC invocations=2092 (full 68):
+ PSYoungGen      total 48128K, used 48096K [0x0000000795580000, 0x00000007b2700000, 0x00000007c0000000)
+  eden space 47616K, 100% used [0x0000000795580000,0x0000000798400000,0x0000000798400000)
+  from space 512K, 93% used [0x00000007b2580000,0x00000007b25f8000,0x00000007b2600000)
+  to   space 1024K, 0% used [0x00000007b2600000,0x00000007b2600000,0x00000007b2700000)
+ ParOldGen       total 123904K, used 53273K [0x0000000740000000, 0x0000000747900000, 0x0000000795580000)
+  object space 123904K, 42% used [0x0000000740000000,0x00000007434067a8,0x0000000747900000)
+ Metaspace       used 15820K, capacity 15974K, committed 16256K, reserved 1062912K
+  class space    used 1773K, capacity 1835K, committed 1920K, reserved 1048576K
+Event: 2158.746 GC heap after
+Heap after GC invocations=2092 (full 68):
+ PSYoungGen      total 48128K, used 800K [0x0000000795580000, 0x00000007b2700000, 0x00000007c0000000)
+  eden space 47104K, 0% used [0x0000000795580000,0x0000000795580000,0x0000000798380000)
+  from space 1024K, 78% used [0x00000007b2600000,0x00000007b26c8000,0x00000007b2700000)
+  to   space 1024K, 0% used [0x00000007b2500000,0x00000007b2500000,0x00000007b2600000)
+ ParOldGen       total 123904K, used 53289K [0x0000000740000000, 0x0000000747900000, 0x0000000795580000)
+  object space 123904K, 43% used [0x0000000740000000,0x000000074340a7a8,0x0000000747900000)
+ Metaspace       used 15820K, capacity 15974K, committed 16256K, reserved 1062912K
+  class space    used 1773K, capacity 1835K, committed 1920K, reserved 1048576K
+}
+Event: 2159.429 GC heap before
+{Heap before GC invocations=2093 (full 68):
+ PSYoungGen      total 48128K, used 47904K [0x0000000795580000, 0x00000007b2700000, 0x00000007c0000000)
+  eden space 47104K, 100% used [0x0000000795580000,0x0000000798380000,0x0000000798380000)
+  from space 1024K, 78% used [0x00000007b2600000,0x00000007b26c8000,0x00000007b2700000)
+  to   space 1024K, 0% used [0x00000007b2500000,0x00000007b2500000,0x00000007b2600000)
+ ParOldGen       total 123904K, used 53289K [0x0000000740000000, 0x0000000747900000, 0x0000000795580000)
+  object space 123904K, 43% used [0x0000000740000000,0x000000074340a7a8,0x0000000747900000)
+ Metaspace       used 15820K, capacity 15974K, committed 16256K, reserved 1062912K
+  class space    used 1773K, capacity 1835K, committed 1920K, reserved 1048576K
+Event: 2159.432 GC heap after
+Heap after GC invocations=2093 (full 68):
+ PSYoungGen      total 47104K, used 320K [0x0000000795580000, 0x00000007b2680000, 0x00000007c0000000)
+  eden space 46592K, 0% used [0x0000000795580000,0x0000000795580000,0x0000000798300000)
+  from space 512K, 62% used [0x00000007b2500000,0x00000007b2550000,0x00000007b2580000)
+  to   space 1024K, 0% used [0x00000007b2580000,0x00000007b2580000,0x00000007b2680000)
+ ParOldGen       total 123904K, used 53313K [0x0000000740000000, 0x0000000747900000, 0x0000000795580000)
+  object space 123904K, 43% used [0x0000000740000000,0x00000007434107a8,0x0000000747900000)
+ Metaspace       used 15820K, capacity 15974K, committed 16256K, reserved 1062912K
+  class space    used 1773K, capacity 1835K, committed 1920K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 25.294 Thread 0x00007fcb28a2c800 Uncommon trap: reason=null_check action=make_not_entrant pc=0x000000010e160164 method=com.sun.jna.Structure.readField(Lcom/sun/jna/Structure$StructField;)Ljava/lang/Object; @ 79
+Event: 25.882 Thread 0x00007fcb24194000 Uncommon trap: reason=null_check action=make_not_entrant pc=0x000000010e161aa4 method=com.sun.jna.Structure.readField(Lcom/sun/jna/Structure$StructField;)Ljava/lang/Object; @ 113
+Event: 26.402 Thread 0x00007fcb24194000 Uncommon trap: reason=null_check action=make_not_entrant pc=0x000000010e15276c method=com.sun.jna.Structure.readField(Lcom/sun/jna/Structure$StructField;)Ljava/lang/Object; @ 141
+Event: 26.932 Thread 0x00007fcb2534d800 Uncommon trap: reason=null_check action=make_not_entrant pc=0x000000010e165604 method=com.sun.jna.Structure.readField(Lcom/sun/jna/Structure$StructField;)Ljava/lang/Object; @ 169
+Event: 31.756 Thread 0x00007fcb248e3000 Uncommon trap: reason=null_check action=make_not_entrant pc=0x000000010e18e950 method=com.sun.jna.Pointer.getValue(JLjava/lang/Class;Ljava/lang/Object;)Ljava/lang/Object; @ 25
+Event: 44.883 Thread 0x00007fcb29094800 Uncommon trap: reason=null_check action=make_not_entrant pc=0x000000010e1b89f0 method=com.sun.jna.Function.invoke(Ljava/lang/Class;[Ljava/lang/Object;Ljava/util/Map;)Ljava/lang/Object; @ 152
+Event: 46.343 Thread 0x00007fcb23d38800 Uncommon trap: reason=null_check action=make_not_entrant pc=0x000000010e1c385c method=org.gstreamer.lowlevel.GTypeMapper.getFromNativeConverter(Ljava/lang/Class;)Lcom/sun/jna/FromNativeConverter; @ 4
+Event: 47.821 Thread 0x00007fcb28c0f000 Uncommon trap: reason=null_check action=make_not_entrant pc=0x000000010e1ce7a8 method=org.gstreamer.lowlevel.GTypeMapper.getFromNativeConverter(Ljava/lang/Class;)Lcom/sun/jna/FromNativeConverter; @ 18
+Event: 167.251 Thread 0x00007fcb23a29000 Uncommon trap: reason=range_check action=make_not_entrant pc=0x000000010e2b5d4c method=processing.core.PGraphicsJava2D.vertex(FF)V @ 57
+Event: 928.394 Thread 0x00007fcb23a29000 Uncommon trap: reason=range_check action=make_not_entrant pc=0x000000010e0f38a4 method=java.awt.image.DirectColorModel.setFields()V @ 6
+
+Internal exceptions (10 events):
+Event: 3.065 Thread 0x00007fcb23a29000 Exception <a 'java/security/PrivilegedActionException'> (0x0000000796707938) thrown at [/HUDSON3/workspace/8-2-build-macosx-x86_64/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 3.415 Thread 0x00007fcb2436c000 Exception <a 'java/security/PrivilegedActionException'> (0x0000000795d6d6a0) thrown at [/HUDSON3/workspace/8-2-build-macosx-x86_64/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 3.417 Thread 0x00007fcb2436c000 Exception <a 'java/security/PrivilegedActionException'> (0x0000000795d79048) thrown at [/HUDSON3/workspace/8-2-build-macosx-x86_64/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 3.418 Thread 0x00007fcb2436c000 Exception <a 'java/security/PrivilegedActionException'> (0x0000000795d7db10) thrown at [/HUDSON3/workspace/8-2-build-macosx-x86_64/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 3.711 Thread 0x00007fcb23a29000 Exception <a 'java/security/PrivilegedActionException'> (0x0000000795beece8) thrown at [/HUDSON3/workspace/8-2-build-macosx-x86_64/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 3.726 Thread 0x00007fcb23a29000 Exception <a 'java/security/PrivilegedActionException'> (0x0000000795c10e30) thrown at [/HUDSON3/workspace/8-2-build-macosx-x86_64/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 3.727 Thread 0x00007fcb23a29000 Exception <a 'java/security/PrivilegedActionException'> (0x0000000795c185e0) thrown at [/HUDSON3/workspace/8-2-build-macosx-x86_64/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 3.729 Thread 0x00007fcb23a29000 Exception <a 'java/security/PrivilegedActionException'> (0x0000000795c1f3b0) thrown at [/HUDSON3/workspace/8-2-build-macosx-x86_64/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 3.731 Thread 0x00007fcb23a29000 Exception <a 'java/security/PrivilegedActionException'> (0x0000000795c28250) thrown at [/HUDSON3/workspace/8-2-build-macosx-x86_64/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 3.732 Thread 0x00007fcb23a29000 Exception <a 'java/security/PrivilegedActionException'> (0x0000000795c2e858) thrown at [/HUDSON3/workspace/8-2-build-macosx-x86_64/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+
+Events (10 events):
+Event: 2159.177 Thread 0x00007fcb2490b000 Thread exited: 0x00007fcb2490b000
+Event: 2159.246 Thread 0x00007fcb288fb800 Thread added: 0x00007fcb288fb800
+Event: 2159.249 Thread 0x00007fcb288fb800 Thread exited: 0x00007fcb288fb800
+Event: 2159.306 Thread 0x00007fcb288fb800 Thread added: 0x00007fcb288fb800
+Event: 2159.309 Thread 0x00007fcb288fb800 Thread exited: 0x00007fcb288fb800
+Event: 2159.359 Thread 0x00007fcb28845000 Thread added: 0x00007fcb28845000
+Event: 2159.362 Thread 0x00007fcb28845000 Thread exited: 0x00007fcb28845000
+Event: 2159.429 Thread 0x00007fcb2490b000 Thread added: 0x00007fcb2490b000
+Event: 2159.429 Executing VM operation: ParallelGCFailedAllocation
+Event: 2159.433 Executing VM operation: ParallelGCFailedAllocation done
+
+
+Dynamic libraries:
+0x000000000a112000 	/System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa
+0x000000000a112000 	/System/Library/Frameworks/Security.framework/Versions/A/Security
+0x000000000a112000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
+0x000000000a112000 	/usr/lib/libz.1.dylib
+0x000000000a112000 	/usr/lib/libSystem.B.dylib
+0x000000000a112000 	/usr/lib/libobjc.A.dylib
+0x000000000a112000 	/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+0x000000000a112000 	/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+0x000000000a112000 	/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
+0x000000000a112000 	/System/Library/Frameworks/CoreData.framework/Versions/A/CoreData
+0x000000000a112000 	/System/Library/PrivateFrameworks/RemoteViewServices.framework/Versions/A/RemoteViewServices
+0x000000000a112000 	/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox
+0x000000000a112000 	/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit
+0x000000000a112000 	/System/Library/PrivateFrameworks/DataDetectorsCore.framework/Versions/A/DataDetectorsCore
+0x000000000a112000 	/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
+0x000000000a112000 	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
+0x000000000a112000 	/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore
+0x000000000a112000 	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition
+0x000000000a112000 	/usr/lib/libauto.dylib
+0x000000000a112000 	/usr/lib/libicucore.A.dylib
+0x000000000a112000 	/usr/lib/libxml2.2.dylib
+0x000000000a112000 	/System/Library/PrivateFrameworks/CoreUI.framework/Versions/A/CoreUI
+0x000000000a112000 	/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio
+0x000000000a112000 	/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration
+0x000000000a112000 	/usr/lib/liblangid.dylib
+0x000000000a112000 	/System/Library/PrivateFrameworks/MultitouchSupport.framework/Versions/A/MultitouchSupport
+0x000000000a112000 	/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+0x000000000a112000 	/usr/lib/libDiagnosticMessagesClient.dylib
+0x000000000a112000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
+0x000000000a112000 	/System/Library/PrivateFrameworks/PerformanceAnalysis.framework/Versions/A/PerformanceAnalysis
+0x000000000a112000 	/System/Library/PrivateFrameworks/GenerationalStorage.framework/Versions/A/GenerationalStorage
+0x000000000a112000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL
+0x000000000a112000 	/System/Library/PrivateFrameworks/Sharing.framework/Versions/A/Sharing
+0x000000000a112000 	/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO
+0x000000000a112000 	/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText
+0x000000000a112000 	/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics
+0x000000000a112000 	/System/Library/PrivateFrameworks/Backup.framework/Versions/A/Backup
+0x000000000a112000 	/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
+0x000000000a112000 	/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
+0x000000000a112000 	/usr/lib/libCRFSuite.dylib
+0x000000000a112000 	/usr/lib/libc++.1.dylib
+0x000000000a112000 	/usr/lib/libc++abi.dylib
+0x000000000a112000 	/usr/lib/system/libcache.dylib
+0x000000000a112000 	/usr/lib/system/libcommonCrypto.dylib
+0x000000000a112000 	/usr/lib/system/libcompiler_rt.dylib
+0x000000000a112000 	/usr/lib/system/libcopyfile.dylib
+0x000000000a112000 	/usr/lib/system/libcorecrypto.dylib
+0x000000000a112000 	/usr/lib/system/libdispatch.dylib
+0x000000000a112000 	/usr/lib/system/libdyld.dylib
+0x000000000a112000 	/usr/lib/system/libkeymgr.dylib
+0x000000000a112000 	/usr/lib/system/liblaunch.dylib
+0x000000000a112000 	/usr/lib/system/libmacho.dylib
+0x000000000a112000 	/usr/lib/system/libquarantine.dylib
+0x000000000a112000 	/usr/lib/system/libremovefile.dylib
+0x000000000a112000 	/usr/lib/system/libsystem_asl.dylib
+0x000000000a112000 	/usr/lib/system/libsystem_blocks.dylib
+0x000000000a112000 	/usr/lib/system/libsystem_c.dylib
+0x000000000a112000 	/usr/lib/system/libsystem_configuration.dylib
+0x000000000a112000 	/usr/lib/system/libsystem_dnssd.dylib
+0x000000000a112000 	/usr/lib/system/libsystem_info.dylib
+0x000000000a112000 	/usr/lib/system/libsystem_kernel.dylib
+0x000000000a112000 	/usr/lib/system/libsystem_m.dylib
+0x000000000a112000 	/usr/lib/system/libsystem_malloc.dylib
+0x000000000a112000 	/usr/lib/system/libsystem_network.dylib
+0x000000000a112000 	/usr/lib/system/libsystem_notify.dylib
+0x000000000a112000 	/usr/lib/system/libsystem_platform.dylib
+0x000000000a112000 	/usr/lib/system/libsystem_pthread.dylib
+0x000000000a112000 	/usr/lib/system/libsystem_sandbox.dylib
+0x000000000a112000 	/usr/lib/system/libsystem_stats.dylib
+0x000000000a112000 	/usr/lib/system/libunc.dylib
+0x000000000a112000 	/usr/lib/system/libunwind.dylib
+0x000000000a112000 	/usr/lib/system/libxpc.dylib
+0x000000000a112000 	/usr/lib/libbsm.0.dylib
+0x000000000a112000 	/usr/lib/libsqlite3.dylib
+0x000000000a112000 	/usr/lib/libxar.1.dylib
+0x000000000a112000 	/usr/lib/libpam.2.dylib
+0x000000000a112000 	/usr/lib/libOpenScriptingUtil.dylib
+0x000000000a112000 	/usr/lib/libbz2.1.0.dylib
+0x000000000a112000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+0x000000000a112000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+0x000000000a112000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+0x000000000a112000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+0x000000000a112000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+0x000000000a112000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+0x000000000a112000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
+0x000000000a112000 	/System/Library/Frameworks/NetFS.framework/Versions/A/NetFS
+0x000000000a112000 	/usr/lib/system/libkxld.dylib
+0x000000000a112000 	/System/Library/PrivateFrameworks/NetAuth.framework/Versions/A/NetAuth
+0x000000000a112000 	/System/Library/PrivateFrameworks/TCC.framework/Versions/A/TCC
+0x000000000a112000 	/System/Library/Frameworks/OpenDirectory.framework/Versions/A/Frameworks/CFOpenDirectory.framework/Versions/A/CFOpenDirectory
+0x000000000a112000 	/System/Library/Frameworks/ServiceManagement.framework/Versions/A/ServiceManagement
+0x000000000a112000 	/usr/lib/libxslt.1.dylib
+0x000000000a112000 	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Ink.framework/Versions/A/Ink
+0x000000000a112000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+0x000000000a112000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync
+0x000000000a112000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+0x000000000a112000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
+0x000000000a112000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+0x000000000a112000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+0x000000000a112000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+0x000000000a112000 	/System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface
+0x000000000a112000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate
+0x000000000a112000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage
+0x000000000a112000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib
+0x000000000a112000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib
+0x000000000a112000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib
+0x000000000a112000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
+0x000000000a112000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+0x000000000a112000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontParser.dylib
+0x000000000a112000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontRegistry.dylib
+0x000000000a112000 	/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libJPEG.dylib
+0x000000000a112000 	/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libTIFF.dylib
+0x000000000a112000 	/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libPng.dylib
+0x000000000a112000 	/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libGIF.dylib
+0x000000000a112000 	/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libJP2.dylib
+0x000000000a112000 	/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libRadiance.dylib
+0x000000000a112000 	/usr/lib/libcups.2.dylib
+0x000000000a112000 	/System/Library/Frameworks/Kerberos.framework/Versions/A/Kerberos
+0x000000000a112000 	/System/Library/Frameworks/GSS.framework/Versions/A/GSS
+0x000000000a112000 	/usr/lib/libresolv.9.dylib
+0x000000000a112000 	/usr/lib/libiconv.2.dylib
+0x000000000a112000 	/System/Library/PrivateFrameworks/Heimdal.framework/Versions/A/Heimdal
+0x000000000a112000 	/System/Library/PrivateFrameworks/TrustEvaluationAgent.framework/Versions/A/TrustEvaluationAgent
+0x000000000a112000 	/usr/lib/libheimdal-asn1.dylib
+0x000000000a112000 	/System/Library/Frameworks/OpenDirectory.framework/Versions/A/OpenDirectory
+0x000000000a112000 	/System/Library/PrivateFrameworks/CommonAuth.framework/Versions/A/CommonAuth
+0x000000000a112000 	/System/Library/Frameworks/SecurityFoundation.framework/Versions/A/SecurityFoundation
+0x000000000a112000 	/System/Library/PrivateFrameworks/Bom.framework/Versions/A/Bom
+0x000000000a112000 	/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo
+0x000000000a112000 	/System/Library/Frameworks/QuartzCore.framework/Versions/A/Frameworks/CoreImage.framework/Versions/A/CoreImage
+0x000000000a112000 	/System/Library/Frameworks/QuartzCore.framework/Versions/A/Frameworks/ScalableUserInterface.framework/Versions/A/ScalableUserInterface
+0x000000000a112000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+0x000000000a112000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGFXShared.dylib
+0x000000000a112000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+0x000000000a112000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib
+0x000000000a112000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCVMSPluginSupport.dylib
+0x000000000a112000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreVMClient.dylib
+0x000000000a112000 	/System/Library/PrivateFrameworks/FaceCore.framework/Versions/A/FaceCore
+0x000000000a112000 	/System/Library/PrivateFrameworks/CrashReporterSupport.framework/Versions/A/CrashReporterSupport
+0x000000000a112000 	/System/Library/Frameworks/OpenCL.framework/Versions/A/OpenCL
+0x000000000a112000 	/System/Library/PrivateFrameworks/AppleFSCompression.framework/Versions/A/AppleFSCompression
+0x000000000a112000 	/System/Library/PrivateFrameworks/Ubiquity.framework/Versions/A/Ubiquity
+0x000000000a112000 	/System/Library/PrivateFrameworks/IconServices.framework/Versions/A/IconServices
+0x000000000a112000 	/System/Library/PrivateFrameworks/ChunkingLibrary.framework/Versions/A/ChunkingLibrary
+0x000000000a112000 	/System/Library/PrivateFrameworks/CoreSymbolication.framework/Versions/A/CoreSymbolication
+0x000000000a112000 	/System/Library/PrivateFrameworks/Symbolication.framework/Versions/A/Symbolication
+0x000000000a112000 	/System/Library/PrivateFrameworks/DebugSymbols.framework/Versions/A/DebugSymbols
+0x000000010ca00000 	/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/server/libjvm.dylib
+0x000000000a112000 	/usr/lib/libstdc++.6.dylib
+0x000000010c1c7000 	/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/libverify.dylib
+0x000000010da1f000 	/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/libjava.dylib
+0x000000010c1df000 	/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/libzip.dylib
+0x0000000123ac7000 	/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/JavaRuntimeSupport
+0x000000010c1e9000 	/System/Library/Frameworks/JavaVM.framework/Versions/A/Frameworks/JavaNativeFoundation.framework/Versions/A/JavaNativeFoundation
+0x0000000123adf000 	/System/Library/Frameworks/JavaVM.framework/Versions/A/JavaVM
+0x000000000a112000 	/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon
+0x0000000123aec000 	/System/Library/PrivateFrameworks/JavaLaunching.framework/Versions/A/JavaLaunching
+0x000000000a112000 	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels
+0x000000000a112000 	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help
+0x000000000a112000 	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture
+0x000000000a112000 	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting
+0x000000000a112000 	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print
+0x000000000a112000 	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI
+0x00000001242de000 	/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/libawt.dylib
+0x000000012438d000 	/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/./libmlib_image.dylib
+0x0000000124459000 	/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/libawt_lwawt.dylib
+0x000000012450c000 	/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/./libosxapp.dylib
+0x000000000a112000 	/System/Library/Frameworks/ExceptionHandling.framework/Versions/A/ExceptionHandling
+0x000000000a112000 	/System/Library/PrivateFrameworks/CoreServicesInternal.framework/Versions/A/CoreServicesInternal
+0x000000000a112000 	/System/Library/PrivateFrameworks/Librarian.framework/Versions/A/Librarian
+0x000000000a112000 	/System/Library/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCGCMS.A.dylib
+0x000000000a112000 	/System/Library/Frameworks/CoreGraphics.framework/Versions/A/Resources/libRIP.A.dylib
+0x000000000a112000 	/System/Library/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCGXType.A.dylib
+0x000000000a112000 	/System/Library/PrivateFrameworks/FamilyControls.framework/Versions/A/FamilyControls
+0x000000000a112000 	/System/Library/PrivateFrameworks/CommerceKit.framework/Versions/A/Frameworks/CommerceCore.framework/Versions/A/CommerceCore
+0x000000000a112000 	/System/Library/PrivateFrameworks/SystemAdministration.framework/Versions/A/SystemAdministration
+0x000000000a112000 	/System/Library/Frameworks/DirectoryService.framework/Versions/A/DirectoryService
+0x000000000a112000 	/System/Library/PrivateFrameworks/DiskImages.framework/Versions/A/DiskImages
+0x000000000a112000 	/System/Library/PrivateFrameworks/LoginUIKit.framework/Versions/A/Frameworks/LoginUICore.framework/Versions/A/LoginUICore
+0x000000000a112000 	/usr/lib/libCoreStorage.dylib
+0x000000000a112000 	/usr/lib/libcsfde.dylib
+0x000000000a112000 	/usr/lib/libodfde.dylib
+0x000000000a112000 	/System/Library/Frameworks/DiscRecording.framework/Versions/A/DiscRecording
+0x000000000a112000 	/usr/lib/libcurl.4.dylib
+0x000000000a112000 	/System/Library/PrivateFrameworks/MediaKit.framework/Versions/A/MediaKit
+0x000000000a112000 	/System/Library/PrivateFrameworks/EFILogin.framework/Versions/A/EFILogin
+0x000000000a112000 	/usr/lib/libutil.dylib
+0x000000000a112000 	/System/Library/PrivateFrameworks/AOSNotification.framework/Versions/A/AOSNotification
+0x000000000a112000 	/System/Library/Frameworks/LDAP.framework/Versions/A/LDAP
+0x000000000a112000 	/usr/lib/libsasl2.2.dylib
+0x000000000a112000 	/usr/lib/libcrypto.0.9.8.dylib
+0x000000000a112000 	/usr/lib/libssl.0.9.8.dylib
+0x000000000a112000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Resources/GLEngine.bundle/GLEngine
+0x000000000a112000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLProgrammability.dylib
+0x0000000000000000 	/System/Library/Extensions/AppleIntelHDGraphicsGLDriver.bundle/Contents/MacOS/AppleIntelHDGraphicsGLDriver
+0x00000001286e9000 	/System/Library/PrivateFrameworks/GPUSupport.framework/Versions/A/Libraries/libGPUSupport.dylib
+0x0000000000000000 	/System/Library/Extensions/GeForceTeslaGLDriver.bundle/Contents/MacOS/GeForceTeslaGLDriver
+0x00000001286fb000 	/System/Library/Extensions/GeForceTeslaGLDriver.bundle/Contents/MacOS/libclh.dylib
+0x000000000a112000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Resources/GLRendererFloat.bundle/GLRendererFloat
+0x000000000a112000 	/System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/libcldcpuengine.dylib
+0x0000000129573000 	/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/libfontmanager.dylib
+0x0000000128fe4000 	/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/libosxui.dylib
+0x000000012ad75000 	/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/libnet.dylib
+0x0000000129d26000 	/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/libnio.dylib
+0x0000000129866000 	/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/libjsound.dylib
+0x000000012c29f000 	/System/Library/Frameworks/CoreMIDI.framework/Versions/A/CoreMIDI
+0x000000000a112000 	/usr/lib/libexpat.1.dylib
+0x0000000129879000 	/System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleHDAHALPlugIn.bundle/Contents/MacOS/AppleHDAHALPlugIn
+0x000000012aeb5000 	/private/var/folders/96/yc_jsg0j2cq6c9kptr9m6qj00000gn/T/jna-chro/jna6827233471633861761.tmp
+0x0000000130eb5000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgstreamer-0.10.dylib
+0x0000000129cc9000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libffi.dylib
+0x000000012ca3f000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgobject-2.0.dylib
+0x000000012aaf8000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgthread-2.0.dylib
+0x000000012ab74000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgmodule-2.0.dylib
+0x0000000130faa000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libglib-2.0.dylib
+0x000000012aeca000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libintl.dylib
+0x00000001310ce000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libiconv.dylib
+0x00000001311d0000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libxml2.dylib
+0x000000012aed9000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libz.dylib
+0x000000012aef0000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstadder.so
+0x0000000131519000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgstaudio-0.10.dylib
+0x0000000131557000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgstbase-0.10.dylib
+0x00000001315b3000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/liborc-0.4.dylib
+0x000000012b115000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgstpbutils-0.10.dylib
+0x000000012aefe000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgstinterfaces-0.10.dylib
+0x000000012ab7c000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstadpcmdec.so
+0x000000012b898000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstadpcmenc.so
+0x000000012b9a4000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstaiff.so
+0x000000013162f000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgsttag-0.10.dylib
+0x000000012b9b6000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstalaw.so
+0x000000012be18000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstalpha.so
+0x000000012ca91000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgstvideo-0.10.dylib
+0x0000000131668000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgstcontroller-0.10.dylib
+0x000000012b9c1000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstalphacolor.so
+0x000000012be2f000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstannodex.so
+0x000000012cab2000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstapetag.so
+0x0000000131695000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstapexsink.so
+0x00000001316a3000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libssl.dylib
+0x000000013170f000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libcrypto.dylib
+0x00000001318cd000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstapp.so
+0x00000001318d4000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgstapp-0.10.dylib
+0x00000001318e5000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstapplemedia.so
+0x000000000a112000 	/System/Library/Frameworks/QTKit.framework/Versions/A/QTKit
+0x000000000a112000 	/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation
+0x000000000a112000 	/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia
+0x000000000a112000 	/System/Library/Frameworks/MediaToolbox.framework/Versions/A/MediaToolbox
+0x000000000a112000 	/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox
+0x000000000a112000 	/System/Library/PrivateFrameworks/CoreMediaAuthoring.framework/Versions/A/CoreMediaAuthoring
+0x000000000a112000 	/System/Library/Frameworks/CoreMediaIO.framework/Versions/A/CoreMediaIO
+0x000000000a112000 	/System/Library/Frameworks/AVFoundation.framework/Versions/A/Resources/libAVFAudio.dylib
+0x000000000a112000 	/System/Library/PrivateFrameworks/MediaControlSender.framework/Versions/A/MediaControlSender
+0x000000000a112000 	/System/Library/PrivateFrameworks/CoreAVCHD.framework/Versions/A/CoreAVCHD
+0x000000000a112000 	/System/Library/Frameworks/MediaAccessibility.framework/Versions/A/MediaAccessibility
+0x000000000a112000 	/System/Library/PrivateFrameworks/Mangrove.framework/Versions/A/Mangrove
+0x000000000a112000 	/System/Library/PrivateFrameworks/CoreAUC.framework/Versions/A/CoreAUC
+0x000000000a112000 	/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Apple80211
+0x000000000a112000 	/System/Library/PrivateFrameworks/AppleSRP.framework/Versions/A/AppleSRP
+0x000000000a112000 	/System/Library/PrivateFrameworks/CoreUtils.framework/Versions/A/CoreUtils
+0x000000000a112000 	/System/Library/Frameworks/CoreWLAN.framework/Versions/A/CoreWLAN
+0x000000000a112000 	/usr/lib/libpcap.A.dylib
+0x000000000a112000 	/System/Library/Frameworks/CoreWiFi.framework/Versions/A/CoreWiFi
+0x000000000a112000 	/System/Library/PrivateFrameworks/AppleVA.framework/Versions/A/AppleVA
+0x000000000a112000 	/System/Library/PrivateFrameworks/XPCService.framework/Versions/A/XPCService
+0x000000000a112000 	/System/Library/PrivateFrameworks/AppSandbox.framework/Versions/A/AppSandbox
+0x000000000a112000 	/usr/lib/libsandbox.1.dylib
+0x000000000a112000 	/System/Library/PrivateFrameworks/AppContainer.framework/Versions/A/AppContainer
+0x000000000a112000 	/System/Library/PrivateFrameworks/SecCodeWrapper.framework/Versions/A/SecCodeWrapper
+0x000000000a112000 	/usr/lib/libMatch.1.dylib
+0x0000000131907000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstasfmux.so
+0x000000013191e000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgstrtp-0.10.dylib
+0x000000013193b000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstaudioconvert.so
+0x0000000131957000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstaudiofx.so
+0x000000013197a000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgstfft-0.10.dylib
+0x0000000131989000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstaudioparsers.so
+0x00000001319a5000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstaudiorate.so
+0x00000001319af000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstaudioresample.so
+0x00000001319c5000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/liborc-test-0.4.dylib
+0x00000001319ce000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstaudiotestsrc.so
+0x00000001319dd000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstauparse.so
+0x00000001319ea000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstautoconvert.so
+0x00000001319f8000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstautodetect.so
+0x0000000131a07000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstavi.so
+0x0000000131a34000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgstriff-0.10.dylib
+0x0000000131a45000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstbayer.so
+0x0000000131a54000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstbz2.so
+0x0000000131a5e000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstcamerabin.so
+0x0000000131a85000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgstphotography-0.10.dylib
+0x0000000131a90000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstcamerabin2.so
+0x0000000131aa9000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgstbasecamerabinsrc-0.10.dylib
+0x0000000131ab5000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstcdxaparse.so
+0x0000000131ac0000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstcoloreffects.so
+0x0000000131acd000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstcolorspace.so
+0x0000000131b00000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstcoreelements.so
+0x0000000131b4a000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstcoreindexers.so
+0x0000000131b56000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstcutter.so
+0x0000000131b62000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstdataurisrc.so
+0x0000000131b6b000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstdc1394.so
+0x0000000131b79000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libdc1394.dylib
+0x0000000131bee000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libusb-1.0.dylib
+0x0000000131bff000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstdccp.so
+0x0000000131c0d000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstdebug.so
+0x0000000131c24000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstdebugutilsbad.so
+0x0000000131c35000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstdecodebin.so
+0x0000000131c45000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstdecodebin2.so
+0x0000000131c66000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstdeinterlace.so
+0x0000000131caf000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstdtmf.so
+0x0000000131cc1000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstdtsdec.so
+0x0000000131ccc000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libdca.dylib
+0x0000000131cf3000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstdv.so
+0x0000000131d07000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libdv.dylib
+0x0000000131d38000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstdvbsuboverlay.so
+0x0000000131d4a000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstdvdspu.so
+0x0000000131d5c000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstefence.so
+0x0000000131d66000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgsteffectv.so
+0x0000000131d80000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstencodebin.so
+0x0000000131d94000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstequalizer.so
+0x0000000131da4000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstfestival.so
+0x0000000131dad000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstffmpeg.so
+0x00000001328e0000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstffmpegcolorspace.so
+0x000000013292d000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstffmpegscale.so
+0x0000000132968000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstfieldanalysis.so
+0x0000000132978000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgstbasevideo-0.10.dylib
+0x0000000132992000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstflv.so
+0x00000001329af000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstflxdec.so
+0x00000001329ba000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstfragmented.so
+0x00000001329ca000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstfreeze.so
+0x00000001329d2000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstfrei0r.so
+0x00000001329e4000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstgaudieffects.so
+0x00000001329f2000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstgdp.so
+0x0000000132a00000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgstdataprotocol-0.10.dylib
+0x0000000132a0a000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstgeometrictransform.so
+0x0000000132a1e000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstgio.so
+0x0000000132a2e000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgio-2.0.dylib
+0x0000000132b81000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstgoom.so
+0x0000000132ba0000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstgoom2k1.so
+0x0000000132bef000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstgsettingselements.so
+0x0000000132bfc000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgsth264parse.so
+0x0000000132c0e000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgsthdvparse.so
+0x0000000132c19000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgsticydemux.so
+0x0000000132c25000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstid3demux.so
+0x0000000132c2f000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstid3tag.so
+0x0000000132c3d000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstimagefreeze.so
+0x0000000132c4a000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstinterlace.so
+0x0000000132c56000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstinterleave.so
+0x0000000132c68000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstisomp4.so
+0x0000000132cc6000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstivfparse.so
+0x0000000132cce000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstjp2k.so
+0x0000000132cdc000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libjasper.dylib
+0x0000000132d36000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libjpeg.dylib
+0x0000000132d71000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstjp2kdecimator.so
+0x0000000132d80000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstjpegformat.so
+0x0000000132d8f000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstlegacyresample.so
+0x0000000132d9f000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstlevel.so
+0x0000000132dab000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstliveadder.so
+0x0000000132dbb000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstmatroska.so
+0x0000000132e00000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstmpegdemux.so
+0x0000000132e3e000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstmpegpsmux.so
+0x0000000132e4f000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstmpegtsdemux.so
+0x0000000132e79000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstmpegtsmux.so
+0x0000000132e8f000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstmpegvideoparse.so
+0x0000000132e9b000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstmulaw.so
+0x0000000132ea5000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstmultifile.so
+0x0000000132eb8000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstmultipart.so
+0x0000000132ec6000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstmusepack.so
+0x0000000132ed1000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libmpcdec.dylib
+0x0000000132edf000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstmve.so
+0x0000000132f09000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstmxf.so
+0x0000000132f70000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstnavigationtest.so
+0x0000000132f7b000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstnsf.so
+0x0000000132f9e000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstnuvdemux.so
+0x0000000132fa9000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstogg.so
+0x0000000132fe0000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libogg.dylib
+0x0000000132fe7000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstoss4audio.so
+0x0000000133007000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstosxaudio.so
+0x0000000133016000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstosxvideosink.so
+0x0000000133026000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstpatchdetect.so
+0x0000000133032000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstpcapparse.so
+0x000000013303c000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstplaybin.so
+0x0000000133083000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstpnm.so
+0x000000013308d000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstpostproc.so
+0x00000001330a4000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstrawparse.so
+0x00000001330b4000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstreal.so
+0x00000001330c2000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstreplaygain.so
+0x00000001330d3000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstrfbsrc.so
+0x00000001330e4000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstrtp.so
+0x0000000133147000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstrtpmanager.so
+0x0000000133185000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgstnetbuffer-0.10.dylib
+0x000000013318d000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstrtpmux.so
+0x000000013319a000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstrtpvp8.so
+0x00000001331a4000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstrtsp.so
+0x00000001331cb000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgstrtsp-0.10.dylib
+0x00000001331e6000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgstsdp-0.10.dylib
+0x00000001331f3000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstscaletempoplugin.so
+0x00000001331fc000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstsdi.so
+0x0000000133205000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstsdpelem.so
+0x0000000133213000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstsegmentclip.so
+0x000000013321e000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstshapewipe.so
+0x000000013322e000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstsiren.so
+0x000000013324d000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstsmpte.so
+0x0000000133263000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstspectrum.so
+0x0000000133272000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstspeed.so
+0x000000013327b000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgststereo.so
+0x0000000133283000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstsubenc.so
+0x000000013328c000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstsubparse.so
+0x00000001332a0000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgsttcp.so
+0x00000001332bb000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgsttheora.so
+0x00000001332d3000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libtheoraenc.dylib
+0x000000013330c000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libtheoradec.dylib
+0x0000000133324000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgsttta.so
+0x0000000133330000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgsttypefindfunctions.so
+0x0000000133349000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstudp.so
+0x000000013335f000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstvideobox.so
+0x00000001334c3000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstvideocrop.so
+0x00000001334d3000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstvideofilter.so
+0x0000000133377000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstvideofiltersbad.so
+0x00000001334e9000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstvideomaxrate.so
+0x00000001334f1000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstvideomeasure.so
+0x0000000133503000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstvideomixer.so
+0x0000000133528000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstvideoparsersbad.so
+0x0000000133546000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libgstcodecparsers-0.10.dylib
+0x0000000133575000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstvideorate.so
+0x0000000133582000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstvideoscale.so
+0x00000001335a5000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstvideosignal.so
+0x00000001335b0000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstvideotestsrc.so
+0x00000001335c3000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstvmnc.so
+0x00000001335ce000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstvolume.so
+0x00000001335dd000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstvorbis.so
+0x00000001335f0000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libvorbisenc.dylib
+0x00000001338af000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libvorbis.dylib
+0x00000001338dc000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstwavenc.so
+0x00000001338e8000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstwavparse.so
+0x00000001338fd000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgstxvid.so
+0x000000013390f000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video/libxvidcore.dylib
+0x0000000133a03000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgsty4mdec.so
+0x0000000133a0e000 	/Users/chro/Documents/proclipse/glassbead/lib/base/video//plugins/libgsty4menc.so
+0x0000000133a18000 	/System/Library/Frameworks/CoreMediaIO.framework/Resources/VDC.plugin/Contents/MacOS/VDC
+0x0000000133a49000 	/Users/chro/Documents/proclipse/glassbead/lib/user/opencv_processing/libopencv_java245.dylib
+0x0000000133b31000 	/Users/chro/Documents/proclipse/glassbead/lib/user/opencv_processing/libopencv_core.2.4.dylib
+0x0000000133dba000 	/Users/chro/Documents/proclipse/glassbead/lib/user/opencv_processing/libopencv_imgproc.2.4.dylib
+0x00000001340a0000 	/Users/chro/Documents/proclipse/glassbead/lib/user/opencv_processing/libopencv_highgui.2.4.dylib
+0x00000001342e1000 	/Users/chro/Documents/proclipse/glassbead/lib/user/opencv_processing/libopencv_objdetect.2.4.dylib
+0x0000000134371000 	/Users/chro/Documents/proclipse/glassbead/lib/user/opencv_processing/libopencv_flann.2.4.dylib
+0x0000000134401000 	/Users/chro/Documents/proclipse/glassbead/lib/user/opencv_processing/libopencv_features2d.2.4.dylib
+0x00000001344bc000 	/Users/chro/Documents/proclipse/glassbead/lib/user/opencv_processing/libopencv_video.2.4.dylib
+0x0000000134519000 	/Users/chro/Documents/proclipse/glassbead/lib/user/opencv_processing/libopencv_ml.2.4.dylib
+0x000000013459c000 	/Users/chro/Documents/proclipse/glassbead/lib/user/opencv_processing/libopencv_calib3d.2.4.dylib
+0x0000000134650000 	/Users/chro/Documents/proclipse/glassbead/lib/user/opencv_processing/libopencv_photo.2.4.dylib
+0x0000000134672000 	/Users/chro/Documents/proclipse/glassbead/lib/user/opencv_processing/libopencv_legacy.2.4.dylib
+0x000000013479a000 	/Users/chro/Documents/proclipse/glassbead/lib/user/opencv_processing/libopencv_gpu.2.4.dylib
+0x00000001347c7000 	/Users/chro/Documents/proclipse/glassbead/lib/user/opencv_processing/libopencv_ocl.2.4.dylib
+0x0000000134a1d000 	/Users/chro/Documents/proclipse/glassbead/lib/user/opencv_processing/libopencv_nonfree.2.4.dylib
+0x0000000134a55000 	/Users/chro/Documents/proclipse/glassbead/lib/user/opencv_processing/libopencv_contrib.2.4.dylib
+0x0000000135727000 	/System/Library/Frameworks/CoreMediaIO.framework/Resources/CMIOUnits.bundle/Contents/MacOS/CMIOUnits
+0x00000001358b7000 	/System/Library/PrivateFrameworks/FWAVC.framework/Versions/A/FWAVC
+0x000000012b439000 	/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/libdcpr.dylib
+0x000000013c3c0000 	/System/Library/PrivateFrameworks/AppleGVA.framework/AppleGVA
+
+VM Arguments:
+jvm_args: -Djava.library.path=/Users/chro/Documents/proclipse/glassbead/lib/base/video:/Users/chro/Documents/proclipse/glassbead/lib/base/video:/Users/chro/Documents/proclipse/glassbead/lib/base/video:/Users/chro/Documents/proclipse/glassbead/lib/base/core:/Users/chro/Documents/proclipse/glassbead/lib/base/core:/Users/chro/Documents/proclipse/glassbead/lib/base/core:/Users/chro/Documents/proclipse/glassbead/lib/base/core:/Users/chro/Documents/proclipse/glassbead/lib/base/core:/Users/chro/Documents/proclipse/glassbead/lib/base/core:/Users/chro/Documents/proclipse/glassbead/lib/base/core:/Users/chro/Documents/proclipse/glassbead/lib/base/core:/Users/chro/Documents/proclipse/glassbead/lib/base/core:/Users/chro/Documents/proclipse/glassbead/lib/base/core:/Users/chro/Documents/proclipse/glassbead/lib/base/core:/Users/chro/Documents/proclipse/glassbead/lib/base/core:/Users/chro/Documents/proclipse/glassbead/lib/base/core:/Users/chro/Documents/proclipse/glassbead/lib/base/core:/Users/chro/Documents/proclipse/glassbead/lib/base/core:/Users/chro/Documents/proclipse/glassbead/lib/user/beads:/Users/chro/Documents/proclipse/glassbead/lib/user/beads:/Users/chro/Documents/proclipse/glassbead/lib/user/beads:/Users/chro/Documents/proclipse/glassbead/lib/user/beads:/Users/chro/Documents/proclipse/glassbead/lib/user/beads:/Users/chro/Documents/proclipse/glassbead/lib/user/beads:/Users/chro/Documents/proclipse/glassbead/lib/user/beads:/Users/chro/Documents/proclipse/glassbead/lib/user/beads:/Users/chro/Documents/proclipse/glassbead/lib/user/beads:/Users/chro/Documents/proclipse/glassbead/lib/user/beads:/Users/chro/Documents/proclipse/glassbead/lib/user/beads:/Users/chro/Documents/proclipse/glassbead/lib/user/beads:/Users/chro/Documents/proclipse/glassbead/lib/user/blobscanner:/Users/chro/Documents/proclipse/glassbead/lib/user/boofcv_processing:/Users/chro/Documents/proclipse/glassbead/lib/user/boofcv_processing:/Users/chro/Documents/proclipse/glassbead/lib/user/opencv_processing:/Users/chro/Do-Djava.security.policy=java.policy.applet -Dfile.encoding=UTF-8 
+java_command: sun.applet.AppletViewer io.alatalab.glassbead.AtariGo1437843732546.html
+java_class_path (initial): /Users/chro/Documents/proclipse/glassbead/lib/base/video/gstreamer-java.jar:/Users/chro/Documents/proclipse/glassbead/lib/base/video/jna.jar:/Users/chro/Documents/proclipse/glassbead/lib/base/video/video.jar:/Users/chro/Documents/proclipse/glassbead/lib/base/core/core.jar:/Users/chro/Documents/proclipse/glassbead/lib/base/core/gluegen-rt-natives-linux-amd64.jar:/Users/chro/Documents/proclipse/glassbead/lib/base/core/gluegen-rt-natives-linux-armv6hf.jar:/Users/chro/Documents/proclipse/glassbead/lib/base/core/gluegen-rt-natives-linux-i586.jar:/Users/chro/Documents/proclipse/glassbead/lib/base/core/gluegen-rt-natives-macosx-universal.jar:/Users/chro/Documents/proclipse/glassbead/lib/base/core/gluegen-rt-natives-windows-amd64.jar:/Users/chro/Documents/proclipse/glassbead/lib/base/core/gluegen-rt-natives-windows-i586.jar:/Users/chro/Documents/proclipse/glassbead/lib/base/core/gluegen-rt.jar:/Users/chro/Documents/proclipse/glassbead/lib/base/core/jogl-all-natives-linux-amd64.jar:/Users/chro/Documents/proclipse/glassbead/lib/base/core/jogl-all-natives-linux-armv6hf.jar:/Users/chro/Documents/proclipse/glassbead/lib/base/core/jogl-all-natives-linux-i586.jar:/Users/chro/Documents/proclipse/glassbead/lib/base/core/jogl-all-natives-macosx-universal.jar:/Users/chro/Documents/proclipse/glassbead/lib/base/core/jogl-all-natives-windows-amd64.jar:/Users/chro/Documents/proclipse/glassbead/lib/base/core/jogl-all-natives-windows-i586.jar:/Users/chro/Documents/proclipse/glassbead/lib/base/core/jogl-all.jar:/Users/chro/Documents/proclipse/glassbead/lib/user/beads/beads.jar:/Users/chro/Documents/proclipse/glassbead/lib/user/beads/jarjar-1.0.jar:/Users/chro/Documents/proclipse/glassbead/lib/user/beads/jl1.0.1.jar:/Users/chro/Documents/proclipse/glassbead/lib/user/beads/jna.jar:/Users/chro/Documents/proclipse/glassbead/lib/user/beads/mp3spi1.9.4.jar:/Users/chro/Documents/proclipse/glassbead/lib/user/beads/org-jaudiolibs-audioservers-jack.jar:/Users/chro/Document
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/usr/bin:/bin:/usr/sbin:/sbin
+SHELL=/bin/bash
+DISPLAY=/tmp/launch-gJgfnP/org.macosforge.xquartz:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.dylib+0x579dc7], sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_ONSTACK|SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.dylib+0x579dc7], sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.dylib+0x45b030], sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.dylib+0x45b030], sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.dylib+0x45b030], sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.dylib+0x45b030], sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=SA_RESTART
+SIGUSR2: [libjvm.dylib+0x45ab4e], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.dylib+0x459121], sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.dylib+0x459121], sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.dylib+0x459121], sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.dylib+0x459121], sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Bsduname:Darwin 13.4.0 Darwin Kernel Version 13.4.0: Wed Mar 18 16:20:14 PDT 2015; root:xnu-2422.115.14~1/RELEASE_X86_64 x86_64
+rlimit: STACK 8192k, CORE 0k, NPROC 709, NOFILE 10240, AS infinity
+load average:3.99 4.28 4.43
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 37 stepping 5, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, aes, clmul, ht, tsc, tscinvbit
+
+Memory: 4k page, physical 8388608k(2398308k free)
+
+/proc/meminfo:
+
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.25-b02) for bsd-amd64 JRE (1.8.0_25-b17), built on Sep 17 2014 16:56:50 by "java_re" with gcc 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.11.00)
+
+time: Sat Jul 25 20:38:12 2015
+elapsed time: 2159 seconds (0d 0h 35m 59s)
+

@@ -14,8 +14,7 @@ public abstract class BaseApplet extends PApplet {
 	
 
 	
-	public Capture cam;
-	public OpenCV opencv;
+	//public OpenCV opencv;
 	public MidiBus speedBus = new MidiBus(this,0,1);
 	public MidiBus complicationBus = new MidiBus(this,1,2);
 	public MidiBus newMoveBus = new MidiBus(this,2,3);
@@ -34,6 +33,11 @@ public abstract class BaseApplet extends PApplet {
 		myBus.sendControllerChange(new ControlChange(channel, number, value));
 		
 	}
+	public static void main(String args[]) {
+	    PApplet.main(new String[] {
+	    		"--present", "com.chroneus.atarigo.GoMokuApplet" 
+	    		});
+	  }
 	
 	public  void sendMidiMessage(MidiBus myBus,int channel,int number,int value,int delay){
 		

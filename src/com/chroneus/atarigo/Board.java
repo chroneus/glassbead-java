@@ -1,4 +1,4 @@
-package io.alatalab.glassbead.state;
+package com.chroneus.atarigo;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -7,12 +7,12 @@ import java.util.*;
 public class Board implements Cloneable {
 	static final boolean BLACK=false;
 	static final boolean WHITE=true;
-	BitBoard black = new BitBoard();
-	BitBoard white = new BitBoard();
+	public BitBoard black = new BitBoard();
+	public BitBoard white = new BitBoard();
 
 	public boolean is_white_next = false;
 
-	public static byte SIZE = 9;
+	public static byte SIZE = 19;
 
 	/**
 	 * Init board from @param toString like
@@ -35,6 +35,17 @@ public class Board implements Cloneable {
 
 	public Board() {
 
+	}
+
+	public Board(char[] charArray) {
+		for (int x = 0; x < SIZE; x++) {
+			for (int y = 0; y < SIZE; y++) {
+				
+				if (charArray[x*SIZE+y]=='W') white.set(x, y);
+				if (charArray[x*SIZE+y]=='B') black.set(x, y);
+			}
+		}
+		is_white_next = black.cardinality() > white.cardinality();
 	}
 
 	/**
@@ -168,6 +179,14 @@ public class Board implements Cloneable {
 		}
 
 	}
+	
+	public int cardinality(){
+		return black.cardinality()+white.cardinality();
+	}
+	
+	public boolean isEmpty(){
+		return black.isEmpty() && white.isEmpty();
+	}
     
 	public Board fillBoardWithNearestStones(int depth){
 		Board board = (Board) this.clone();
@@ -271,14 +290,7 @@ public class Board implements Cloneable {
 	 */
 	public Set<WeakConnection> getWeakConnections(BitBoard[] groups, BitBoard opponent) {
         Set<WeakConnection> connections=new HashSet<WeakConnection>(); 
-		if(groups==null || groups.length==0) return connections;
-
-		for(BitBoard test_group:groups)
-			for(BitBoard other_group:groups){
-				if(other_group.equals(test_group)||test_group.intersects(other_group)) continue;
-				connections.addAll(WeakConnection.checkWeakConnection(test_group,other_group,opponent));
-		    	
-		}
+		
 		return connections;
 	}
 	/**
@@ -366,7 +378,21 @@ public class Board implements Cloneable {
 		return black.get(move);
 	}
 
+    public static void main(String[] args) {
+		Board b = new Board();
+		b.play_move(100);
 
+		System.out.println(b.is_terminal());
+		b.play_move(101);
+		b.play_move(102);
+		b.play_move(12);
+		b.play_move(120);
+		b.play_move(11);
+		System.out.println(b.is_terminal());
+		b.play_move(101-19);
+		System.out.println(b.is_terminal());
+		System.out.println(b);
+	}
 	@Override
 	protected Object clone() {
 
@@ -455,7 +481,13 @@ public class Board implements Cloneable {
 		super.finalize();
 
 	}
-
+    
+	public void is_half_terminal(){
+		if(is_white_next){
+			black.nearest_stones();
+		}
+	}
+	
 	public boolean isClear(byte i, byte j) {
 		return !black.get(i, j)&&!white.get(i, j);
 	}

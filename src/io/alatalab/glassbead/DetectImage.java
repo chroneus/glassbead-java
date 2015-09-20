@@ -44,7 +44,7 @@ public class DetectImage extends PApplet {
 
 	public	void setup() {
 		size(camera_width, camera_height);
-
+           
 		    cam = new Capture(this, camera_width, camera_height, Props.getValue("camera_name"), 30);
 		    
 		    // Start capturing the images from the camera

@@ -1,4 +1,4 @@
-package io.alatalab.glassbead.state;
+package com.chroneus.atarigo;
 import java.util.*;
 public class WeakConnection {
   BitBoard a, b;
@@ -35,28 +35,7 @@ public Board toBoard() {
 
 static Set<WeakConnection>  checkWeakConnection(BitBoard a,BitBoard b,BitBoard other_stones){
 	 Set<WeakConnection> result =new HashSet<WeakConnection>();
-	  BitBoard sum=(BitBoard) a.clone();sum.or(b);
-	  
-	  BitBoard[] bamboos=sum.containsSubBitBoard(BoardConstant.Bamboo);
-	  for(BitBoard bamboo:bamboos) {
-		  if(bamboo.intersects(a) && bamboo.intersects(b)){
-			  BitBoard cuttingStones=getBambooInnerStones(bamboo);
-			  if(!cuttingStones.intersects(other_stones)){
-				  WeakConnection conn=new WeakConnection(a, b, cuttingStones);
-				  result.add(conn);
-			  }
-		  }		  
-	  }
-	  BitBoard[] kosumis=sum.containsSubBitBoard(BoardConstant.Kosumi);
-	  for(BitBoard kosumi:kosumis) {
-		  if(kosumi.intersects(a) && kosumi.intersects(b)){
-			  BitBoard cuttingStones=getKosumiInnerStones(kosumi);
-			  if(!cuttingStones.intersects(other_stones)){
-				  WeakConnection conn=new WeakConnection(a, b, cuttingStones);
-				  result.add(conn);
-			  }
-		  }		  
-	  }
+	 
 	  
 	  return result;
 	  

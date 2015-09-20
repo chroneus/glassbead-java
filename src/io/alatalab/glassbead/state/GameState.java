@@ -4,7 +4,8 @@ import java.util.*;
 import java.awt.Robot;
 import java.text.DateFormat;
 
-import io.alatalab.glassbead.Board;
+import com.chroneus.atarigo.Board;
+
 import processing.core.PApplet;
 import themidibus.ControlChange;
 import themidibus.MidiBus;

@@ -1,6 +1,7 @@
-package io.alatalab.glassbead.state;
+package com.chroneus.atarigo;
 
 import java.util.ArrayList;
+import java.util.BitSet;
 import java.util.HashSet;
 import java.util.List;
 
@@ -8,21 +9,28 @@ import java.util.List;
  * this class looks like two-dimension BitSet with constant size
  */
 public class BitBoard implements Cloneable {
-	long a0 = 0, a1 = 0;// max 128 bit
-	 long a2=0,a3=0,a4=0,a5=0; // for 19*19
-	 int xsize = 19, ysize = 19;
-	static final long mask=Long.parseLong("11111111111111111", 2);
-
-	public BitBoard(int x, int y) {
+	 BitSet bitset ;
+	 byte xsize = 19, ysize = 19;
+	public BitBoard(byte x, byte y) {
+		bitset = new BitSet(x*y);
 		setXsize(x);
 		setYsize(y);
 	}
+  
+	public BitSet getBitset() {
+		return bitset;
+	}
+
+	public void setBitset(BitSet bitset) {
+		this.bitset = bitset;
+	}
 
 	public BitBoard() {
+		bitset = new BitSet(BoardConstant.SIZE*BoardConstant.SIZE);
 	}
 
 	public BitBoard(int size) {
-		this((int) Math.sqrt(size), (int) Math.sqrt(size));
+		this((byte) Math.sqrt(size), (byte) Math.sqrt(size));
 	}
 	public BitBoard(int[] initial) {
 		this(BoardConstant.SIZE,BoardConstant.SIZE);
@@ -30,69 +38,63 @@ public class BitBoard implements Cloneable {
 			set(initial[i]);
 		}
 	}
+	public BitBoard(int i, int j) {
+		this((byte) i, (byte) j);
+	}
+
+	public BitBoard(BitSet bitSet2) {
+		this.bitset=bitSet2;
+		
+	}
+
+	public void set(byte x, byte y) {
+		set(x * ysize + y);
+	}
 
 	public void set(int x, int y) {
 		set(x * ysize + y);
 	}
 
-
-	public boolean get(int x, int y) {
+	public boolean get(byte x, byte y) {
 		return get(x * ysize + y);
 	}
 
 	public void flip(int bit) {
-		if (bit < 64)
-			a0 ^= 1L << bit;
-		else
-			a1 ^= 1L << (bit - 64);
+		bitset.flip(bit);
 	}
 
 	public void set(int bit) {
-		if (bit < 64)
-			a0 |= 1L << bit;
-		else
-			a1 |= 1L << (bit - 64);
+		bitset.set(bit);
 	}
 
 	public boolean get(int bit) {
-		if (bit < 64)
-			return ((a0 & (1L << bit)) != 0);
-		else
-			return ((a1 & (1L << (bit - 64))) != 0);
+		 return bitset.get(bit);
 	}
 
 	public void clear(int bit) {
-		if (bit < 64)
-			a0 &= ~(1L << bit);
-		else
-			a1 &= ~(1L << (bit - 64));
+		bitset.clear(bit);
 	}
 
 	public void clear() {
-		int x = getXsize();
-		int y = getYsize();
-		a0 = 0;
-		a1 = 0;
-		setXsize(x);
-		setYsize(y);
+		bitset.clear();
 	}
 
-	public int getXsize() {
-		// return (int) ((a1 >> (48)) & 0xff);
+	public byte getXsize() {
+		// return (byte) ((a1 >> (48)) & 0xff);
 		return xsize;
 	}
 
-	public int getYsize() {
-		// return (int) ((a1 >> (56)) & 0xff);
+	public byte getYsize() {
+		// return (byte) ((a1 >> (56)) & 0xff);
 		return ysize;
 	}
 
-	public void setXsize(int x) {
+	public void setXsize(byte x) {
 		// a1|= (0xF0FFFFFF & x);
 		xsize = x;
 	}
 
-	public void setYsize(int y) {
+	public void setYsize(byte y) {
 		// a1|= (0x0FFFFFFF & y);
 		ysize = y;
 	}
@@ -100,8 +102,7 @@ public class BitBoard implements Cloneable {
 	@Override
 	protected Object clone() {
 		BitBoard bitboard = new BitBoard();
-		bitboard.a0 = a0;
-		bitboard.a1 = a1;
+		bitboard.bitset= (BitSet) bitset.clone();
 		bitboard.xsize = xsize;
 		bitboard.ysize = ysize;
 		return bitboard;
@@ -110,16 +111,11 @@ public class BitBoard implements Cloneable {
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof BitBoard) {
-			if (this.ysize == ((BitBoard) obj).ysize && this.a0 == ((BitBoard) obj).a0
-					&& this.a1 == ((BitBoard) obj).a1) return true;
+			if (this.ysize == ((BitBoard) obj).ysize && this.bitset.equals(((BitBoard)obj).getBitset())) return true;
 		}
 		return false;
 	}
     
-	public boolean intersects(BitBoard another) {
-		  return ((this.a0 & another.a0) != 0) ||((this.a1 & another.a1) != 0);
-	}
-
 	
 	public BitBoard mirror() {
 		BitBoard bitBoard = new BitBoard(xsize, ysize);
@@ -142,7 +138,7 @@ public class BitBoard implements Cloneable {
 		return bitBoard;
 	}
 
-	public BitBoard moveXY(int x, int y, int wrap_size_x, int wrap_size_y) {
+	public BitBoard moveXY(byte x, byte y, byte wrap_size_x, byte wrap_size_y) {
 
 		BitBoard bitBoard = new BitBoard(wrap_size_x, wrap_size_y);
 		for (int i = nextSetBit(0); i >= 0; i = nextSetBit(i + 1)) {
@@ -162,51 +158,32 @@ public class BitBoard implements Cloneable {
 
 	@Override
 	public int hashCode() {
-		return (int)(a0 ^ (a0>> 32) ^ a1 ^ (a1 >> 32)) ;
+		return bitset.hashCode() ;
 	}
 	
 
 	
 	public int nextSetBit(int bit) {
-		if (bit < 64) {
-			int trail_a0 = Long.numberOfTrailingZeros(a0 & (-1L << bit));
-			if (trail_a0 < 64)
-				return trail_a0;
-			else {
-				int trail_a1 = Long.numberOfTrailingZeros(a1);
-				if (trail_a1 < 64)
-					return trail_a1 + 64;
-				else
-					return -1;
-			}
-		}
-		else {
-			int trail_a1 = Long.numberOfTrailingZeros(a1 & (-1L << (bit - 64)));
-			if (trail_a1 < 17)
-				return trail_a1 + 64;
-			else
-				return -1;
-		}
+		return bitset.nextSetBit(bit);
+		
 	}
 
 	public void not() {
-		a0 = ~a0;
-		a1 = ~a1 &mask | (a1&~mask);
+		bitset.flip(0, 360);
 		
 	}
 
 	public void andNot(BitBoard moved_transform) {
-		a0 &= ~moved_transform.a0;
-		a1 &= (~moved_transform.a1&mask)|(a1&~mask);
+		bitset.andNot(moved_transform.bitset);
 		
 	}
 
 	public boolean isEmpty() {
-		return a0 == 0 && (a1&mask) == 0;
+		return bitset.isEmpty();
 	}
 
 	public int cardinality() {
-		return Long.bitCount(a0) + Long.bitCount(a1&mask);
+		return bitset.cardinality();
 	}
 
 	public int size() {
@@ -217,13 +194,11 @@ public class BitBoard implements Cloneable {
 	 * 
 	 */
 	public void and(BitBoard moved_transform) {
-		a0 &= moved_transform.a0;
-		a1 &= moved_transform.a1;
+		bitset.and(moved_transform.bitset);
 	}
 
 	public void or(BitBoard moved_transform) {
-		a0 |= moved_transform.a0;
-		a1 |= moved_transform.a1;
+		bitset.or(moved_transform.bitset);
 	}
 
 	public void flipInRange(int i, int j) {
@@ -249,8 +224,8 @@ public class BitBoard implements Cloneable {
 		subsetTransformed.add(rotate270subset.mirror());
 
 		for (BitBoard subsetTransform : subsetTransformed) {
-			for (int x = 0; x <= this.getXsize() - subsetTransform.getXsize(); x++) {
-				for (int y = 0; y <= this.getYsize() - subsetTransform.getYsize(); y++) {
+			for (byte x = 0; x <= this.getXsize() - subsetTransform.getXsize(); x++) {
+				for (byte y = 0; y <= this.getYsize() - subsetTransform.getYsize(); y++) {
 					BitBoard test = (BitBoard) this.clone();
 					BitBoard moved_transform = subsetTransform.moveXY(x, y, this.getXsize(), this.getYsize());
 					test.and(moved_transform);
@@ -269,8 +244,8 @@ public class BitBoard implements Cloneable {
 	@Override
 	public String toString() {
 		char[][] pseudoGraphics = new char[xsize][ysize];
-		for (int x = 0; x < xsize; x++) {
-			for (int y = 0; y < ysize; y++) {
+		for (byte x = 0; x < xsize; x++) {
+			for (byte y = 0; y < ysize; y++) {
 				if (get(x, y))
 					pseudoGraphics[x][y] = '*';
 				else
@@ -279,8 +254,8 @@ public class BitBoard implements Cloneable {
 		}
 
 		StringBuffer out = new StringBuffer();
-		for (int x = 0; x < xsize; x++) {
-			for (int y = 0; y < ysize; y++) {
+		for (byte x = 0; x < xsize; x++) {
+			for (byte y = 0; y < ysize; y++) {
 				out.append(" " + pseudoGraphics[x][y]);
 			}
 			out.append("\n");
@@ -288,6 +263,52 @@ public class BitBoard implements Cloneable {
 
 		return out.toString();
 	}
+
+	public BitBoard shift (int n) {
+		
+		BitBoard shifted = new BitBoard(this.bitset.get(n, Math.max(n, this.bitset.length())));
+		
+
+		return shifted;
+	}
+	//TODO use long
+public BitBoard unshift (int n) {
+		
+	BitSet result = new BitSet(BoardConstant.SIZE*BoardConstant.SIZE);
+	BitSet shifted=this.bitset.get(0, this.bitset.length()-n);
+	
+	for(int i=n;i<BoardConstant.SIZE*BoardConstant.SIZE;i++){
+		if(shifted.get(i-n))
+		result.set(i);
+	}
+		return new BitBoard(result);
+	}
+
+public  BitBoard shiftRight( int n) {
+	
+    if (n < 0)
+        throw new IllegalArgumentException("'n' must be >= 0");
+    if (n >= 64)
+        throw new IllegalArgumentException("'n' must be < 64");
+
+    long[] words = this.bitset.toLongArray();
+    if(words.length==0) return (BitBoard) this.clone();
+    // Expand array if there will be carry bits
+    if ( words[words.length - 1] >>> n > 0) {
+        long[] tmp = new long[words.length + 1];
+        System.arraycopy(words, 0, tmp, 0, words.length);
+        words = tmp;
+    }
+
+    // Do the shift
+    for (int i = words.length - 1; i > 0; i--) {
+        words[i] <<= n; // Shift current word
+        words[i] |= words[i - 1] >>> (64 - n); // Do the carry
+    }
+    words[0] <<= n; // shift [0] separately, since no carry
+
+    return new BitBoard(BitSet.valueOf(words));
+}
 
 	/*
 	 * also use it for influence
@@ -310,39 +331,44 @@ public class BitBoard implements Cloneable {
 	}
 	
 	
+	public BitBoard get_left_top_nearest_stones(){
+		
+		BitBoard leftresult=(BitBoard) this.clone();
+		leftresult.andNot(BoardConstant.LeftBorder);
+		leftresult.andNot(BoardConstant.TopBorder);
+		return leftresult.shift(20);
+	}
+	public BitBoard get_right_top_nearest_stones(){
+		
+		BitBoard leftresult=(BitBoard) this.clone();
+		leftresult.andNot(BoardConstant.RightBorder);
+		leftresult.andNot(BoardConstant.TopBorder);
+		return leftresult.shift(18);
+	}	
 	public BitBoard get_left_nearest_stones(){
 		BitBoard leftresult=(BitBoard) this.clone();
 		leftresult.andNot(BoardConstant.LeftBorder);
-		leftresult.a0>>>=1;
-		leftresult.a0 |= ((leftresult.a1&1L) << 63);
-		leftresult.a1=((leftresult.a1>>>1)&mask)|(leftresult.a1&~mask);	
-		return leftresult;
+		
+		return leftresult.shift(1);
 	}
 	public BitBoard get_right_nearest_stones(){
 		BitBoard rightresult=(BitBoard) this.clone();
 		rightresult.andNot(BoardConstant.RightBorder);
-		rightresult.a1=((rightresult.a1<<1)&mask)|(rightresult.a1&~mask);
-		rightresult.a1|=((rightresult.a0&-1L)>>>63);
-		rightresult.a0<<=1;
-		return rightresult;
+		return rightresult.shiftRight( 1);
 	}
 	public BitBoard get_top_nearest_stones(){
-		BitBoard topresult=(BitBoard) this.clone();
-		topresult.andNot(BoardConstant.TopBorder);
-		topresult.a0>>>=9;
-		topresult.a0 |=( (topresult.a1&511L) << 55);
-		topresult.a1=((topresult.a1>>>9)&mask)|(topresult.a1&~mask);
-		return topresult;
+		BitBoard leftresult=this.shift(19);
+		
+		//	leftresult.bitset.
+			leftresult.andNot(BoardConstant.TopBorder);
+			return leftresult;
 	}
-	public BitBoard get_bottom_nearest_stones(){
+	public BitBoard get_bottom_nearest_stones() {
 		BitBoard bottomresult=(BitBoard) this.clone();
 		bottomresult.andNot(BoardConstant.BottomBorder);
-		bottomresult.a1=((bottomresult.a1<<9)&mask)|(bottomresult.a1&~mask);
-		bottomresult.a1|=((bottomresult.a0&-1L)>>>55);
-		bottomresult.a0<<=9;
-		return bottomresult;
+		return bottomresult.shiftRight(19);
 	}
-	
+
 
 
 }

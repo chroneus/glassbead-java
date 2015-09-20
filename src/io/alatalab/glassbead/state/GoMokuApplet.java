@@ -6,7 +6,10 @@ import processing.core.PApplet;
 
 public class GoMokuApplet extends PApplet 
 {
-   GoMokuBoard board;
+  
+	private static final long serialVersionUID = -2858978030120895374L;
+	
+GoMokuBoard board;
    Label score;
 
    public void init() 
