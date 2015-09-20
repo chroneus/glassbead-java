@@ -1,15 +1,11 @@
 package com.chroneus.atarigo.socket;
 
-import io.alatalab.glassbead.BaseApplet;
-import io.alatalab.glassbead.DetachedProcessRunner;
-import io.alatalab.glassbead.GoMoku;
 
 import java.io.*;
 import java.net.*;
 
 import com.chroneus.atarigo.AtariGoApplet;
 import com.chroneus.atarigo.Board;
-import com.chroneus.atarigo.GoMokuApplet;
 import com.chroneus.atarigo.GomokuBoard;
 
 public class SocketServer {
@@ -18,18 +14,35 @@ public class SocketServer {
 	static Board previous_board = new GomokuBoard();
     static AtariGoApplet base;
     static int state=0,current_state;
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args){
 		base = new AtariGoApplet();
 		base.main(new String[] { "--present", "AtariGoApplet" });
 		//beginRecording(null);
 		//base.playRow(1);
-		Thread.currentThread().sleep(10000);
+		try {
+			Thread.currentThread().sleep(1000);
+		} catch (InterruptedException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		//base.stopAll();
 		//stopRecording();
-		try {
-			sc = new ServerSocket(7777);
-		//	while(true)
-			socketAccept(sc);
+
+			try {
+				sc = new ServerSocket(7777);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			while(true){
+				try{
+
+					socketAccept(sc);
+				}catch(Exception e){
+					e.printStackTrace();
+				}
+				
+			}
 			// Board b = new Board();
 			// b.play_move(160);
 			// b.play_move(161);
@@ -41,9 +54,7 @@ public class SocketServer {
 			//
 			// System.out.println(b.is_white_next);
 			// System.out.println(b.is_terminal());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	
 
 	}
 	
@@ -74,12 +85,13 @@ public class SocketServer {
 			System.out.println();
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					socket.getInputStream()));
-			String line = null;
+			String line = reader.readLine();
 			Board board;
-			while (true) {
-				line = reader.readLine();
+			
+			while (socket!=null && !socket.isClosed()  && 	line !=null) {
+			
 				//System.out.println(line);
-				if (line != null && !line.isEmpty() && line.length() == 361) {
+				if ( !line.isEmpty() && line.length() == 361) {
 
 					 board = new Board(line.toCharArray());
 				
@@ -103,8 +115,9 @@ public class SocketServer {
 						proceedBoard(board);
 					previous_board = board;
 				}
-			
+				line = reader.readLine();
 			}
+			System.out.println("client disconnected");
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
