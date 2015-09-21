@@ -11,7 +11,7 @@ import java.util.Random;
 
 
 public class AtariGoApplet extends BaseApplet{
-
+   static int master_volume = 0;
 	public Random rand = new Random();
   static int center_x,center_y, real_contour=0;
 	int camera_width =Integer.valueOf(Props.getValue("log_camera_width"));
@@ -24,8 +24,8 @@ public class AtariGoApplet extends BaseApplet{
 
 	static Queue<Integer> rows_played = new LinkedList<Integer>();
 	public	void setup() {
-		size(camera_width, camera_height);
-
+		//size(camera_width, camera_height);
+		size (20,20);
 		
 		    
 
@@ -52,7 +52,7 @@ public class AtariGoApplet extends BaseApplet{
 	@Override
 	public void startAll() {
 	//playColumn(1);
-		
+		fadeIn(960);
 	}
 	@Override
 	public void muteRow(int i) {
@@ -87,7 +87,33 @@ public class AtariGoApplet extends BaseApplet{
 		}
 
 	}
+	
+	public void mute(){
+		sendMidiMessage(complicationBus, 2, 2, 0);
+		master_volume=0;
+	}
+	public void fadeIn  (int msec){
+		int parts = 16,max=128;
+		System.out.println("fadein");
+		for(int i=0;i<parts;i++){
+
+		master_volume = i*128/parts;
+		sendMidiMessage(complicationBus, 2, 2,  master_volume,msec/parts);
+		}
+	}
+	
+	public void fadeOut  (int msec){
+		int parts = 16,max=128;
+		if(master_volume<1)return;
+		for(int i=parts;i>=0;i--){
+			master_volume = i*128/parts;
+		sendMidiMessage(complicationBus, 2, 2,master_volume,msec/parts);
+		}
+		System.out.println("fadeout");
+	}
+	
 	public void stopAll() {
+		fadeOut(200);
 		sendMidiMessage(newMoveBus, 2, 125, 127);
 		
 	}

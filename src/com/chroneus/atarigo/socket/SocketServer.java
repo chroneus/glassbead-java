@@ -17,6 +17,7 @@ public class SocketServer {
 	public static void main(String[] args){
 		base = new AtariGoApplet();
 		base.main(new String[] { "--present", "AtariGoApplet" });
+		
 		//beginRecording(null);
 		//base.playRow(1);
 		try {
@@ -97,7 +98,7 @@ public class SocketServer {
 				
 					if (!board.isEmpty()) {
 						if (Math.abs(board.black.cardinality()
-								- board.white.cardinality()) > 4
+								- board.white.cardinality()) > 2 
 								/*|| Math.abs(board.black.cardinality()
 										+ board.white.cardinality()
 										- previous_board.black.cardinality()
@@ -140,12 +141,13 @@ public class SocketServer {
 		}
 		if(board.is_terminal()) {
 			base.youLoose();
-			stopRecording();
+			//stopRecording();
 			return;
 		}
 		if(board.cardinality()<2 ) {
-			current_state=1;
-			beginRecording(null);
+			base.mute();
+			current_state=1;  
+			//beginRecording(null);
 		}
 		else if(board.cardinality()<4 ) current_state=2;
 		else if(board.cardinality()<7 ) current_state=3;
@@ -159,5 +161,7 @@ public class SocketServer {
 			base.playRow(row);
 			base.playColumn(state);
 		//}
+			
+			if(current_state==1)  base.fadeIn(500);
 	}
 }
